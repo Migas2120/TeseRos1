@@ -1,0 +1,4 @@
+<launch>
+    <!-- Launch the MiddleMan node -->
+    <node pkg="ros1_server" type="middle_man.py" name="middle_man_node" output="screen" />
+</launch>

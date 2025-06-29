@@ -11,6 +11,9 @@ import heapq
 from typing import List, Tuple, Optional
 import sys
 import os
+import numpy as np
+import trimesh
+from shapely.geometry import Polygon, Point
 
 # Append ROS 1 package root directory to sys.path
 current_dir = os.path.dirname(os.path.abspath(__file__))        # .../ros1_server/scripts
@@ -81,7 +84,7 @@ class DroneInstance:
                     continue
 
                 # NEW: check start_time
-                if mission.start_time and now < mission.start_time:
+                if hasattr(mission, "start_time") and mission.start_time and now < mission.start_time:
                     self._log("debug", f"Mission '{mission.mission_id}' scheduled for later (start_time={mission.start_time}, now={now:.0f})")
                     heapq.heappush(self.mission_queue, prioritized)
                     break  # Exit — no mission should be started yet
@@ -462,17 +465,15 @@ class DroneInstance:
         grids each slice polygon footprint.
         """
         try:
-            import numpy as np
-            import trimesh
-            from shapely.geometry import Polygon, Point
+            
 
             mission_id = data.get("mission_id", "map_area_auto")
             points = np.array(data["points"])
 
-            # 1️⃣ Build convex hull from user points
+            # Build convex hull from user points
             hull = trimesh.convex.convex_hull(points)
 
-            # 2️⃣ Determine Z range
+            # Determine Z range
             z_min = np.min(points[:, 2])
             z_max = np.max(points[:, 2])
 
@@ -492,7 +493,8 @@ class DroneInstance:
                     continue
 
                 # Convert to planar polygon in XY
-                polygon_paths = slice.to_planar().polygons_full
+                path2D, T = slice.to_2D()
+                polygon_paths = path2D.polygons_full
                 if not polygon_paths:
                     continue
 
@@ -509,7 +511,9 @@ class DroneInstance:
                     row = []
                     for x in x_values:
                         if shapely_poly.contains(Point(x, y)):
-                            row.append((x, y, z))
+                            point_local = np.array([x, y, 0, 1])
+                            point_world = T @ point_local
+                            row.append((point_world[0], point_world[1], point_world[2]))
                     if i % 2 == 1:
                         row.reverse()
                     waypoints.extend(row)
@@ -530,7 +534,7 @@ class DroneInstance:
             self._log(
                 "info",
                 f"[3D Slicer] {len(waypoints)} waypoints generated from 3D hull "
-                f"between Z={z_min:.2f}–{z_max:.2f} every {vertical_step}m."
+                f"between Z={z_min:.2f}-{z_max:.2f} every {vertical_step}m."
             )
 
         except Exception as e:

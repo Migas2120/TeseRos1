@@ -1,7 +1,10 @@
 import socket
 import json
 import time
-import math
+import random
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
 
 
 def send(sock, command, delay=2):
@@ -10,19 +13,97 @@ def send(sock, command, delay=2):
     time.sleep(delay)
 
 
-def create_circle_mission(mission_id="basic_test_mission", altitude=10.0):
-    cx, cy = 25, 25
-    r = 15
-    waypoints = [
-        [cx + r * math.cos(a), cy + r * math.sin(a), altitude]
-        for a in [i * math.pi / 4 for i in range(8)]
-    ]
-    return {
-        "type": "add_mission",
-        "mission_id": mission_id,
-        "waypoints": waypoints,
-        "mode": "once"
-    }
+def create_cube_points(center_xy=(25, 25), size=20, min_z=5):
+    """
+    Generate the 8 corner points of a cube.
+    The bottom face will be at Z = min_z.
+    """
+    cx, cy = center_xy
+    s = size / 2
+    cz = s + min_z  # so that cz - s = min_z
+
+    corners = []
+    for dx in [-s, s]:
+        for dy in [-s, s]:
+            for dz in [-s, s]:
+                corners.append([cx + dx, cy + dy, cz + dz])
+    return corners
+
+
+def simulate_layering(points, vertical_step=2.5, grid_spacing=5.0):
+    """
+    Simulate the layering + gridding on the client side to visualize
+    roughly what your server does.
+    """
+    import trimesh
+    from shapely.geometry import Polygon, Point as ShapelyPoint
+
+    points_np = np.array(points)
+    hull = trimesh.convex.convex_hull(points_np)
+
+    z_min = np.min(points_np[:, 2])
+    z_max = np.max(points_np[:, 2])
+
+    z_layers = np.arange(z_min, z_max + vertical_step, vertical_step)
+    waypoints = []
+
+    for z in z_layers:
+        slice = hull.section(plane_origin=[0, 0, z], plane_normal=[0, 0, 1])
+        if slice is None:
+            continue
+
+        # ✅ Use modern API
+        path2D, T = slice.to_2D()
+
+        polys = path2D.polygons_full
+        if not polys:
+            continue
+
+        poly = polys[0]
+        shapely_poly = Polygon(list(poly.exterior.coords))
+
+        minx, miny, maxx, maxy = shapely_poly.bounds
+        y_vals = np.arange(miny, maxy + grid_spacing, grid_spacing)
+
+        for i, y in enumerate(y_vals):
+            x_vals = np.arange(minx, maxx + grid_spacing, grid_spacing)
+            row = []
+            for x in x_vals:
+                if shapely_poly.contains(ShapelyPoint(x, y)):
+                    # ✅ Transform planar XY back to world XYZ using T
+                    point_local = np.array([x, y, 0, 1])   # homogeneous
+                    point_world = T @ point_local          # apply transform
+                    row.append((point_world[0], point_world[1], point_world[2]))
+            if i % 2 == 1:
+                row.reverse()
+            waypoints.extend(row)
+
+    return waypoints
+
+def plot_shape(points, waypoints):
+    """
+    Plot the random corner points and the layered waypoints.
+    """
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Plot corner points
+    corner_points = np.array(points)
+    ax.scatter(corner_points[:, 0], corner_points[:, 1], corner_points[:, 2],
+               color='red', label='Corner Points', s=50)
+
+    # Plot layered waypoints
+    if waypoints:
+        wps = np.array(waypoints)
+        ax.plot(wps[:, 0], wps[:, 1], wps[:, 2],
+                color='blue', marker='o', linestyle='-', label='Layered Waypoints')
+
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    ax.set_title('Random 3D Shape + Sliced Waypoints')
+    ax.legend()
+    plt.show()
 
 
 def main():
@@ -31,65 +112,40 @@ def main():
 
     try:
         print(f"[Test] Connecting to {host}:{port}...")
+
+        cube_points = create_cube_points()
+        # Simulate the layering for your own inspection
+        layered_waypoints = simulate_layering(cube_points)
+
+        # Show the plot
+        plot_shape(cube_points, layered_waypoints)
+
+        # Connect and send to server
         with socket.create_connection((host, port), timeout=5) as sock:
             print("[Test] Connected.")
 
-            # Step 1: Arm
-            send(sock, {"type": "command", "command": "arm", "id": 0})
+            map_area_command = {
+                "type": "map_area",
+                "mission_id": "test_vertical_layering",
+                "points": cube_points,
+                "vertical_step": 2.5,
+                "grid_spacing": 5.0,
+                "priority": 3,
+                "preempt": True
+            }
+            send(sock, map_area_command, delay=5)
 
-            # Step 2: Set mode GUIDED
-            send(sock, {"type": "command", "command": "mode", "mode": "GUIDED", "id": 0})
+            # Let mission run briefly
+            time.sleep(10)
 
-            # Step 3: Takeoff
-            send(sock, {"type": "command", "command": "takeoff", "altitude": 5.0, "id": 0}, delay=10)
-
-            # Step 4: Add a mission
-            mission = create_circle_mission()
-            send(sock, mission)
-
-            # Step 5: Skip current waypoint
-            send(sock, {"type": "command", "command": "skip_wp"}, delay=1)
-
-            # Step 6: Add a new waypoint at index 2
-            send(sock, {
-                "type": "edit_mission",
-                "action": "add",
-                "index": 2,
-                "waypoint": [10.0, 10.0, 10.0]
-            })
-
-            # Step 7: Move waypoint at index 3
-            send(sock, {
-                "type": "edit_mission",
-                "action": "move",
-                "index": 3,
-                "waypoint": [15.0, 15.0, 10.0]
-            })
-
-            # Step 8: Remove waypoint at index 4
-            send(sock, {
-                "type": "edit_mission",
-                "action": "remove",
-                "index": 4
-            })
-
-            # Step 9: Abort mission
-            send(sock, {"type": "command", "command": "abort", "id": 0})
-
-            # Step 10: Resume mission execution
-            send(sock, {"type": "resume_missions"})
-
-            # Step 11: Land
+            # Land
             send(sock, {
                 "type": "command",
                 "command": "land",
-                "id": 0,
-                "altitude": 5.0,
-                "latitude": 0.0,
-                "longitude": 0.0
+                "id": 0
             })
 
-            print("[Test] Basic functionality test completed.")
+            print("[Test] Vertical layering test completed.")
 
     except Exception as e:
         print(f"[Test] Error: {e}")

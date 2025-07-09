@@ -63,6 +63,8 @@ class DroneInstance:
         self.mission_abort_lock = False
 
 
+        self.returning_to_base = False
+
 
 
         self._log("info", f"Initializing DroneInstance with domain ID {self.domain_id}")
@@ -70,6 +72,23 @@ class DroneInstance:
     def tick(self):
         if self.abort_locked:
             return
+
+        if self.returning_to_base:
+            pose = self.telemetry_manager.get_latest_pose()
+            if pose:
+                x, y = pose["x"], pose["y"]
+                # within 0.5 m of home
+                if abs(x) < 0.5 and abs(y) < 0.5:
+                    self._log("info", "Home reached — issuing LAND command")
+                    self.node.publish_from_unity(json.dumps({
+                        "type":    "command",
+                        "command": "mode",
+                        "mode":    "LAND",
+                        "id":      self.domain_id
+                    }))
+                    self.returning_to_base = False
+
+                    return
 
         # Only pick a new mission if no mission is currently active
         if self.active_mission is None and self.mission_queue:
@@ -92,6 +111,13 @@ class DroneInstance:
                 # Assign and start
                 self.active_mission = mission
                 self._log("info", f"Starting mission: {self.active_mission.mission_id}")
+
+                self.node.publish_to_unity({
+                    "type":       "mission",
+                    "id":          self.domain_id,
+                    "mission_id":  self.active_mission.mission_id,
+                    "status":      "started"
+                })
                 break
 
         if self.active_mission:
@@ -186,6 +212,12 @@ class DroneInstance:
 
     def _finish_mission(self):
         self._log("info", f"Mission '{self.active_mission.mission_id}' complete.")
+        self.node.publish_to_unity({
+            "type":       "mission",
+            "id":          self.domain_id,
+            "mission_id":  self.active_mission.mission_id,
+            "status":      "completed"
+        })
         self.active_mission = None
 
         if self.paused_missions:
@@ -196,6 +228,13 @@ class DroneInstance:
             resumed.current_wp_index = 0
 
             self.active_mission = resumed
+
+            self.node.publish_to_unity({
+                "type":       "mission",
+                "id":          self.domain_id,
+                "mission_id":  self.active_mission.mission_id,
+                "status":      "started"
+            })
             return
 
         if self.mission_queue:
@@ -553,6 +592,8 @@ class DroneInstance:
             "mode": "RTL",
             "id": self.domain_id
         }))
+    
+        self.returning_to_base = True
 
     def _handle_change_priority(self, data: dict):
         mission_id = data.get("mission_id")

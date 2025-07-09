@@ -12,6 +12,7 @@ package_root = os.path.abspath(os.path.join(current_dir, '..')) # .../ros1_serve
 sys.path.insert(0, package_root)
 
 from tcp.server import TCPServer
+from tcp.client import TCPClient
 from drone_instance.drone_instance import DroneInstance
 
 
@@ -25,6 +26,8 @@ class AppRunner:
         self.logger = logger
         self.tcp_server = None
         self.tcp_server_thread = None
+
+        self.client: TCPClient | None = None
 
         self.drone = DroneInstance(domain_id=0, logger=self.logger)
         self._log("info", "AppRunner initialized with 1 DroneInstance (ID 0)")
@@ -42,6 +45,7 @@ class AppRunner:
         self.tcp_server_thread.start()
 
         self._log("info", "TCP Server is running. Waiting for Unity commands...")
+        # Don’t start the outgoing client yet—it’ll be kicked off via a Unity message
 
     def tick(self):
         """
@@ -53,15 +57,61 @@ class AppRunner:
         try:
             data = json.loads(message_json)
             self._log("debug", f"Received Unity message: {data}")
+            # Handle a special “connect_back” message to set up our outgoing client:
+            if data.get("type") == "connect_back":
+                host = data.get("ip")
+                port = data.get("port")
+                self._init_client(host, port)
+                return
+
+            # Otherwise, forward to the drone logic
             self.drone.publish_from_unity(data)
         except Exception as e:
             self._log("error", f"Error processing Unity message: {e}")
+
+    def publish_to_unity(self, message_dict):
+        """Send a JSON message back to Unity, if the client exists."""
+        if self.client:
+            payload = json.dumps(message_dict)
+            self.client.send(payload)
+            self._log("debug", f"[AppRunner→Unity] {payload}")
+        else:
+            self._log("warn", "No Unity client; dropping message")
+
+    def _init_client(self, host: str, port: int):
+        """Create or re-create the TCPClient back to Unity."""
+        if self.client:
+            self._log("info", "Re-initializing existing TCP client...")
+            self.client.stop()
+
+        self._log("info", f"Initializing outgoing TCPClient to {host}:{port}")
+        self.client = TCPClient(
+            host=host,
+            port=port,
+            on_connected    = lambda: self._log("info", "Outgoing client connected"),
+            on_disconnected = lambda: self._log("warn", "Outgoing client disconnected"),
+            on_data         = lambda txt: self._log("debug", f"[Unity Drone] {txt}"),
+            logger=self.logger
+        )
+        self.client.start()
+        def _send_handshake():
+            time.sleep(0.1)
+            handshake = json.dumps({
+                "type": "handshake",
+                "id":   self.drone.domain_id
+            })
+            self._log("info", f"Sending handshake: {handshake}")
+            self.client.send(handshake)
+
+        threading.Thread(target=_send_handshake, daemon=True).start()
 
     def shutdown(self):
         self._log("info", "Shutting down TCP and drone...")
         if self.tcp_server:
             self.tcp_server.stop()
         self.drone.shutdown()
+        if self.client:
+            self.client.stop()
 
     def _log(self, level: str, msg: str):
         tag = "[AppRunner]"

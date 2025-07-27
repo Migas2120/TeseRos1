@@ -42,6 +42,14 @@ class NodeWrapper:
         except Exception as e:
             self._log("error", f"Failed to parse JSON or dispatch command: {e}")
 
+    def publish_to_unity(self, message: dict) -> None:
+        """
+        Stub method to satisfy calls from Unity.
+        Accepts a dict payload but performs no action.
+        """
+        # no-op
+        return
+    
     def _log(self, level: str, msg: str):
         tag = f"[NodeWrapper {self.drone_id}]"
         if self.logger:

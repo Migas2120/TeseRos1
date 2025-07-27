@@ -29,7 +29,7 @@ class Mission:
                 # Already in extended format
                 self.waypoints.append({
                     "coords": tuple(wp["coords"]),
-                    "hold_duration": wp.get("hold_duration", 0)
+                    "hold": wp.get("hold", 0)
                 })
             elif isinstance(wp, (list, tuple)) and len(wp) == 3:
                 # Basic format — convert to dict

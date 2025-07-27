@@ -8,7 +8,7 @@ import json
 import numpy as np
 from collections import deque
 import heapq
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Callable
 import sys
 import os
 import numpy as np
@@ -36,90 +36,110 @@ class DroneInstance:
     Represents a single drone running on a companion PC with its own mission logic.
     """
 
-    def __init__(self, domain_id: int, logger=None):
+    def __init__(self, domain_id: int, logger=None, on_landing: Optional[Callable]=None):
+        # ——————————————————————————————————————————————
+        # Identification & Logging
+        # ——————————————————————————————————————————————
         self.domain_id = domain_id
-        self.logger = logger
         self.node_name = f"drone_instance_{domain_id}"
+        self.logger    = logger
 
+        # ——————————————————————————————————————————————
+        # ROS Node Wrapper & Communication
+        # ——————————————————————————————————————————————
         self.node = NodeWrapper(logger=self.logger, drone_id=self.domain_id)
 
-        self.mission_queue: List[PrioritizedMission] = []
-        self.paused_missions: List[Mission] = []
-        self.command_queue = deque()
+        # ——————————————————————————————————————————————
+        # Mission Queues & Command Buffer
+        # ——————————————————————————————————————————————
+        self.mission_queue   : List[PrioritizedMission] = []
+        self.paused_missions : List[Mission]            = []
+        self.command_queue   = deque()
+        self.active_mission  : Optional[Mission]        = None
 
-        self.active_mission: Optional[Mission] = None
-
+        # ——————————————————————————————————————————————
+        # Telemetry Management
+        # ——————————————————————————————————————————————
         self.telemetry_manager = TelemetryManager(
             logger=self.logger,
             telemetry_log_file=telemetry_log_file,
             log_interval=1.0
         )
 
-        self.has_taken_off = False
+        # ——————————————————————————————————————————————
+        # Flight State Flags
+        # ——————————————————————————————————————————————
+        self.has_taken_off           = False
         self.waiting_to_start_mission = False
-        self.is_holding = False
-        self.hold_start_time = None
-        self.abort_locked = False
+        self.is_holding               = False
+        self.hold_start_time          = None
+        self.landing_in_progress = False
+
+        # ——————————————————————————————————————————————
+        # Safety & Abort Locks
+        # ——————————————————————————————————————————————
+        self.abort_locked      = False
         self.mission_abort_lock = False
+        self.returning_to_base  = False
+
+        # ——————————————————————————————————————————————
+        # Manual Control Mode
+        # ——————————————————————————————————————————————
+        self.manual_mode = False
+
+        # ——————————————————————————————————————————————
+        # Incoming-Message Dispatcher
+        # ——————————————————————————————————————————————
+        self._msg_handlers = {
+            ("command", "start_manual"):    lambda d: self._set_manual(True),
+            ("command", "stop_manual"):     lambda d: self._set_manual(False),
+            ("add_mission", None):          self._handle_add_mission,
+            ("command", None):              self._handle_generic_command,
+            ("map_area", None):             self._handle_map_area,
+            ("resume_missions", None):      lambda d: self._handle_resume(),
+            ("edit_mission", None):         self._handle_edit_mission,
+            ("change_priority", None):      self._handle_change_priority,
+            ("return_to_base", None):       lambda d: self._handle_return_to_base(),
+            ("manual_control", None):       self._handle_manual_control,
+        }
 
 
-        self.returning_to_base = False
+        # ——————————————————————————————————————————————
+        # Landing Callback
+        # ——————————————————————————————————————————————
+        self.on_landing = on_landing
 
 
 
         self._log("info", f"Initializing DroneInstance with domain ID {self.domain_id}")
 
     def tick(self):
+
+        if self.landing_in_progress:
+            return
+
         if self.abort_locked:
             return
 
-        if self.returning_to_base:
-            pose = self.telemetry_manager.get_latest_pose()
-            if pose:
-                x, y = pose["x"], pose["y"]
-                # within 0.5 m of home
-                if abs(x) < 0.5 and abs(y) < 0.5:
-                    self._log("info", "Home reached — issuing LAND command")
-                    self.node.publish_from_unity(json.dumps({
-                        "type":    "command",
-                        "command": "mode",
-                        "mode":    "LAND",
-                        "id":      self.domain_id
-                    }))
-                    self.returning_to_base = False
+        # 1) Return‐to‐base handling
+        if self._handle_returning_to_base():
+            return
+        
+        # 2) Battery safety check
+        if self._check_battery_fail_safe():
+            return  
+        
+        # 3) Manual mode bypass
+        if self.manual_mode:
+            return
 
-                    return
+        
 
-        # Only pick a new mission if no mission is currently active
-        if self.active_mission is None and self.mission_queue:
-            now = time.time()
+        # 4) Only pick a new mission if no mission is currently active
+        if self._try_start_next_mission():
+            return
 
-            while self.mission_queue:
-                prioritized = heapq.heappop(self.mission_queue)
-                mission = prioritized.mission
-
-                if not prioritized.valid:
-                    self._log("debug", f"Skipping invalidated mission: {prioritized.mission_id}")
-                    continue
-
-                # NEW: check start_time
-                if hasattr(mission, "start_time") and mission.start_time and now < mission.start_time:
-                    self._log("debug", f"Mission '{mission.mission_id}' scheduled for later (start_time={mission.start_time}, now={now:.0f})")
-                    heapq.heappush(self.mission_queue, prioritized)
-                    break  # Exit — no mission should be started yet
-
-                # Assign and start
-                self.active_mission = mission
-                self._log("info", f"Starting mission: {self.active_mission.mission_id}")
-
-                self.node.publish_to_unity({
-                    "type":       "mission",
-                    "id":          self.domain_id,
-                    "mission_id":  self.active_mission.mission_id,
-                    "status":      "started"
-                })
-                break
-
+        # 5) Handle mission execution
         if self.active_mission:
             self._execute_active_mission()
 
@@ -127,10 +147,6 @@ class DroneInstance:
     def _execute_active_mission(self):
         mission = self.active_mission
 
-        # Battery safety check
-        if self._check_battery_fail_safe():
-            return  
-    
         telemetry = self.telemetry_manager.get_all_latest_status()
         pose = self.telemetry_manager.get_latest_pose()
         status = telemetry.get("status", {}) if telemetry else {}
@@ -165,7 +181,7 @@ class DroneInstance:
             self.node.publish_from_unity(json.dumps({
                 "type": "command",
                 "command": "takeoff",
-                "altitude": 5.0,
+                "altitude": 2.0,
                 "id": self.domain_id
             }))
             self.has_taken_off = True
@@ -174,7 +190,7 @@ class DroneInstance:
 
         # 4. Wait until drone reaches takeoff altitude
         if self.waiting_to_start_mission:
-            if pose["z"] >= 4.5:
+            if pose["z"] >= 1.5:
                 self._log("info", "Reached takeoff altitude. Starting mission.")
                 self.waiting_to_start_mission = False
             else:
@@ -196,6 +212,48 @@ class DroneInstance:
         else:
             self._handle_unreached_waypoint(mission, target_wp_data, dist)
 
+    def _try_start_next_mission(self) -> bool:
+        # ——————————————————————————————————————————————
+        # If no mission is active and there are missions queued, pop the
+        # highest‐priority one, respect its start_time, and dispatch it.
+        # Returns True if a mission was started (so tick() should return).
+        # ——————————————————————————————————————————————
+
+        if self.active_mission is not None or not self.mission_queue:
+            return False
+
+        now = time.time()
+        while self.mission_queue:
+            prioritized = heapq.heappop(self.mission_queue)
+            mission = prioritized.mission
+
+            if not prioritized.valid:
+                self._log("debug", f"Skipping invalidated mission: {prioritized.mission_id}")
+                continue
+
+            # Respect scheduled start_time
+            if getattr(mission, "start_time", None) and now < mission.start_time:
+                self._log(
+                    "debug",
+                    f"Mission '{mission.mission_id}' scheduled for later "
+                    f"(start_time={mission.start_time}, now={now:.0f})"
+                )
+                heapq.heappush(self.mission_queue, prioritized)
+                return False
+
+            # Assign & dispatch
+            self.active_mission = mission
+            self._log("info", f"Starting mission: {mission.mission_id}")
+            self.node.publish_from_unity({
+                "type":       "mission",
+                "id":          self.domain_id,
+                "mission_id":  mission.mission_id,
+                "status":      "started"
+            })
+            return True
+
+        return False
+    
     def _mission_is_complete(self, mission):
         if mission.current_wp_index >= len(mission.waypoints):
             if mission.mode == "patrol":
@@ -210,6 +268,37 @@ class DroneInstance:
         return False
 
 
+    def _handle_returning_to_base(self) -> bool:
+        # ——————————————————————————————————————————————
+        # If we’re in return‐to‐base mode, check for home arrival,
+        # land once there, clear the flag, and return True to stop tick().
+        # ——————————————————————————————————————————————
+
+        if not self.returning_to_base:
+            return False
+
+        pose = self.telemetry_manager.get_latest_pose()
+        if not pose:
+            return False
+
+        x, y = pose["x"], pose["y"]
+        # within 0.5 m of home?
+        if abs(x) < 0.5 and abs(y) < 0.5:
+            self._log("info", "Home reached — issuing LAND command")
+            self.node.publish_from_unity(json.dumps({
+                "type":    "command",
+                "command": "mode",
+                "mode":    "LAND",
+                "id":      self.domain_id
+            }))
+            self.returning_to_base = False
+            self.landing_in_progress = True
+
+            # notify AppRunner to shut everything down
+            if self.on_landing:
+                self.on_landing()
+        return True
+    
     def _finish_mission(self):
         self._log("info", f"Mission '{self.active_mission.mission_id}' complete.")
         self.node.publish_to_unity({
@@ -252,29 +341,39 @@ class DroneInstance:
         return dist < 0.2
 
     def _complete_current_waypoint(self, mission):
-        wp_data = mission.waypoints[mission.current_wp_index]
-        hold_duration = wp_data.get("hold_duration", 0)
+        idx = mission.current_wp_index
+        wp_data = mission.waypoints[idx]
+        hold_duration = wp_data.get("hold", 0)
 
+        # DEBUG: entry state
+        self._log("debug", f"_complete_current_waypoint: idx={idx}, hold_duration={hold_duration}, "
+                        f"is_holding={self.is_holding}, hold_start_time={self.hold_start_time}")
+
+        # 1) start hold if needed
         if hold_duration > 0 and not self.is_holding:
-            self._log("info", f"Holding at waypoint {mission.current_wp_index + 1} for {hold_duration}s")
+            self._log("info",  f"⏸ Starting hold at waypoint #{idx+1} for {hold_duration}s")
             self.hold_start_time = time.time()
-            self.is_holding = True
+            self.is_holding       = True
             return
 
+        # 2) continue or finish hold
         if self.is_holding:
             elapsed = time.time() - self.hold_start_time
+            self._log("debug", f" Holding… elapsed={elapsed:.2f}s / target={hold_duration:.2f}s")
             if elapsed < hold_duration:
-                self._log("debug", f"Holding... {elapsed:.1f}/{hold_duration:.1f}s elapsed")
                 return
-            else:
-                self._log("info", f"Hold complete. Proceeding to next waypoint.")
-                self.is_holding = False
-                self.hold_start_time = None
+            # hold complete
+            self._log("info", f" Hold complete at waypoint #{idx+1} after {elapsed:.2f}s")
+            self.is_holding       = False
+            self.hold_start_time  = None
 
-        mission.current_wp_index += 1
+        # 3) advance to next waypoint
+        new_idx = idx + 1
+        self._log("debug", f" Advancing from waypoint #{idx+1} to #{new_idx+1}")
+        mission.current_wp_index = new_idx
         mission.last_command_time = None
-        mission.retry_count = 0
-        mission.last_distance = None
+        mission.retry_count       = 0
+        mission.last_distance     = None
 
     def _handle_unreached_waypoint(self, mission, target_wp_data, dist):
         now = time.time()
@@ -343,44 +442,57 @@ class DroneInstance:
 
 
     def _check_battery_fail_safe(self) -> bool:
-        """
-        Checks battery level and issues RTL if critical. Returns True if fail-safe was triggered.
-        """
+        #--————————————————————————————————————————————
+        # Checks battery level and issues RTL if critical. Returns True if
+        # fail-safe was triggered and handled (so tick() should return).
+        # ——————————————————————————————————————————————
+
+        if self.returning_to_base or self.landing_in_progress:
+            return 
+    
         telemetry = self.telemetry_manager.get_all_latest_status()
 
         if not telemetry:
             self._log("warn", "Battery check skipped — no telemetry available.")
             return False
 
-        battery_data = telemetry.get("battery", {})
-        battery_percentage = battery_data.get("percentage")
+        battery_data     = telemetry.get("battery", {})
+        battery_percent  = battery_data.get("percentage")  # 0.0–1.0
 
-        if battery_percentage is None:
+        if battery_percent is None:
             self._log("warn", "Battery percentage unavailable.")
             return False
 
-        battery_percent_100 = battery_percentage * 100  # Convert 0.0–1.0 to percentage
+        pct = battery_percent * 100
 
-        if battery_percent_100 <30.0:
-            self._log("error", f"Battery critically low ({battery_percent_100:.1f}%) — issuing RTL and aborting mission.")
+        # CRITICAL
+        if pct < 20.0:
+            # Only issue RTL once
+            if not self.returning_to_base:
+                self._log("error", f"Battery critically low ({pct:.1f}%) — issuing RTL and aborting mission.")
 
-            # 1. Command RTL
-            self.node.publish_from_unity(json.dumps({
-                "type": "command",
-                "command": "mode",
-                "mode": "RTL",
-                "id": self.domain_id
-            }))
+                # 1) Command RTL
+                self.node.publish_from_unity(json.dumps({
+                    "type":    "command",
+                    "command": "mode",
+                    "mode":    "RTL",
+                    "id":      self.domain_id
+                }))
 
-            # 2. Clean up mission state
-            self.active_mission = None
-            self.command_queue.clear()
-            self.mission_abort_lock = True
+                # 2) Clean up mission state
+                self.active_mission    = None
+                self.command_queue.clear()
+                self.mission_abort_lock = True
 
+                # Enter returning-to-base mode so we don’t spam again
+                self.returning_to_base = True
+
+            # In either case, we handled the fail‐safe, so tick() should return
             return True
 
-        if battery_percent_100 < 35.0:
-            self._log("warn", f"Battery low ({battery_percent_100:.1f}%).")
+        # LOW (warning) but non‐critical
+        if pct < 25.0:
+            self._log("warn", f"Battery low ({pct:.1f}%).")
 
         return False
 
@@ -507,7 +619,13 @@ class DroneInstance:
             
 
             mission_id = data.get("mission_id", "map_area_auto")
-            points = np.array(data["points"])
+
+            raw_pts = data.get("points", [])
+
+            points = np.array([
+                [pt["x"], pt["y"], pt["z"]]
+                for pt in raw_pts
+            ], dtype=float)
 
             # Build convex hull from user points
             hull = trimesh.convex.convex_hull(points)
@@ -619,6 +737,52 @@ class DroneInstance:
         if not found:
             self._log("warn", f"Mission '{mission_id}' not found in queue for priority update.")
 
+    def _handle_manual_control(self, data: dict):
+        if not self.manual_mode:
+            self._log("warn", "Manual control received while not in manual_mode")
+            return
+
+        if self.returning_to_base:
+            self._log("warn", "Manual control ignored—return‐to‐base in progress")
+            return
+        axes = data.get("axes", {})
+        # map sticks → velocity
+        x   =  axes.get("ly", 0.0) * 1.0   # forward/back
+        y   = -axes.get("lx", 0.0) * 1.0   # left/right
+        z   =  axes.get("ry", 0.0) * 0.5   # up/down
+        yaw =  axes.get("rx", 0.0) * 0.5   # yaw rate
+
+        cmd = {
+            "type":    "command",
+            "command": "vel",      # must match whatever your BaseCommand registry uses
+            "id":      self.domain_id,
+            "x":       x,
+            "y":       y,
+            "z":       z,
+            "yaw":     yaw
+        }
+        self._log("debug", f"Manual VEL cmd: x={x:.2f}, y={y:.2f}, z={z:.2f}, yaw={yaw:.2f}")
+        self.node.publish_from_unity(json.dumps(cmd))
+
+    def _handle_generic_command(self, data: dict):
+        cmd = data.get("command")
+        
+        if cmd == "abort":
+            return self._handle_abort()
+        if cmd == "skip_wp":
+            return self._handle_skip_waypoint()
+
+        # If we’re in a mission, queue it
+        if self.active_mission:
+            self._log("info", "Mission active — queuing command for later execution.")
+            self.command_queue.append(data)
+        else:
+            # No mission, so send straight through
+            self.node.publish_from_unity(json.dumps(data))
+
+    def _set_manual(self, enabled: bool):
+        self.manual_mode = enabled
+        self._log("info", f"{'Entered' if enabled else 'Exited'} MANUAL mode")
 
     """
     System wide code
@@ -627,43 +791,13 @@ class DroneInstance:
     def publish_from_unity(self, data: dict):
         self._log("info", f"Received message from Unity: {data}")
         msg_type = data.get("type")
+        cmd      = data.get("command")
 
-        if msg_type == "add_mission":
-            self._handle_add_mission(data)
+        handler = self._msg_handlers.get((msg_type, cmd)) \
+            or self._msg_handlers.get((msg_type, None))
 
-        elif msg_type == "command":
-            cmd = data.get("command")
-
-            if cmd == "abort":
-                self._handle_abort()
-                return
-            
-            elif cmd == "skip_wp":
-                self._handle_skip_waypoint()
-                return
-    
-            if self.active_mission:
-                self._log("info", "Mission active — queuing command for later execution.")
-                self.command_queue.append(data)
-            else:
-                self.node.publish_from_unity(json.dumps(data))
-
-        elif msg_type == "map_area":
-            self._handle_map_area(data)
-
-        elif msg_type == "resume_missions":
-            self._handle_resume()
-        
-        elif msg_type == "edit_mission":
-            self._handle_edit_mission(data)
-        
-        elif msg_type == "change_priority":
-            self._handle_change_priority(data)
-    
-        elif msg_type == "return_to_base":
-            self._handle_return_to_base()
-
-
+        if handler:
+            handler(data)
         else:
             self._log("warn", f"Unknown message type or structure: {data}")
 

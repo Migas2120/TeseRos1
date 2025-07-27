@@ -29,7 +29,7 @@ class AppRunner:
 
         self.client: TCPClient | None = None
 
-        self.drone = DroneInstance(domain_id=0, logger=self.logger)
+        self.drone = DroneInstance(domain_id=0, logger=self.logger, on_landing=self.shutdown)
         self._log("info", "AppRunner initialized with 1 DroneInstance (ID 0)")
 
     def start(self):
@@ -111,7 +111,7 @@ class AppRunner:
             self.tcp_server.stop()
         self.drone.shutdown()
         if self.client:
-            self.client.stop()
+            self.client.stop()  
 
     def _log(self, level: str, msg: str):
         tag = "[AppRunner]"

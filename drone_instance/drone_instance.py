@@ -244,7 +244,7 @@ class DroneInstance:
             # Assign & dispatch
             self.active_mission = mission
             self._log("info", f"Starting mission: {mission.mission_id}")
-            self.node.publish_from_unity({
+            self.node.publish_to_unity({
                 "type":       "mission",
                 "id":          self.domain_id,
                 "mission_id":  mission.mission_id,

@@ -16,7 +16,8 @@ from core.logger import init_logger
 def main():
     # CLI args
     parser = argparse.ArgumentParser(description="ROS 1 MiddleMan single-drone server")
-    parser.add_argument("--debug", action="store_true", help="Enable debug logging")
+    parser.add_argument("--debug", action="store_false", help="Enable debug logging")
+    parser.add_argument("--ip",    required=True,        help="Unity host IP address")
     args, _ = parser.parse_known_args()
 
     # ROS node init
@@ -32,8 +33,11 @@ def main():
     app = AppRunner(logger)
     logger.info("[Main] AppRunner instance created")
 
-    app = AppRunner(logger)
     app.start()
+
+    UNITY_PORT = 12345
+    logger.info(f"[Main] Connecting out to Unity at {args.ip}:{UNITY_PORT}")
+    app._init_client(host=args.ip, port=UNITY_PORT)
 
     rate = rospy.Rate(1.0)  # 1 Hz
     try:

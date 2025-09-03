@@ -35,6 +35,8 @@ class TCPServer:
         self.clients = {}
         self.running = False
 
+        self.recv_buffer = {}
+
     def start(self):
         """Starts the TCP server loop."""
         try:
@@ -77,14 +79,26 @@ class TCPServer:
 
     def _receive_message(self, sock):
         try:
-            message = sock.recv(4096)
-            if not message:
-                self._disconnect_client(sock)
-                return
+            data = sock.recv(4096)
+            if not data:
+                return self._disconnect_client(sock)
 
-            decoded = message.decode()
-            self.logger.debug(f"[TCPServer] Received: {decoded}")
-            self.ros_node.publish_from_unity(decoded)
+            buf = self.recv_buffer.setdefault(sock, b'') + data
+
+            # process all complete messages
+            while b'\n' in buf:
+                line, buf = buf.split(b'\n', 1)
+
+                # --- NEW: ignore empty or whitespace-only frames ---
+                if not line.strip():
+                    continue
+
+                decoded = line.decode('utf-8', 'replace').strip()
+                self.logger.debug(f"[TCPServer] Received JSON: {decoded}")
+                self.ros_node.publish_from_unity(decoded)
+
+            # save any trailing partial
+            self.recv_buffer[sock] = buf
 
         except Exception as e:
             self.logger.error(f"[TCPServer] Error receiving from {self.clients.get(sock)}: {e}")
@@ -97,6 +111,12 @@ class TCPServer:
             self.sockets_list.remove(sock)
         self.clients.pop(sock, None)
         sock.close()
+
+        # notify AppRunner that Unity has gone away
+        try:
+            self.ros_node.handle_unity_disconnect()
+        except AttributeError:
+            pass
 
     def _handle_exception(self, sock):
         self.logger.warning(f"[TCPServer] Exception on socket {self.clients.get(sock)}")

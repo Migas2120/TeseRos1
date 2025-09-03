@@ -57,14 +57,7 @@ class AppRunner:
         try:
             data = json.loads(message_json)
             self._log("debug", f"Received Unity message: {data}")
-            # Handle a special “connect_back” message to set up our outgoing client:
-            if data.get("type") == "connect_back":
-                host = data.get("ip")
-                port = data.get("port")
-                self._init_client(host, port)
-                return
-
-            # Otherwise, forward to the drone logic
+            # Forward straight to the drone logic
             self.drone.publish_from_unity(data)
         except Exception as e:
             self._log("error", f"Error processing Unity message: {e}")
@@ -94,17 +87,28 @@ class AppRunner:
             logger=self.logger
         )
         self.client.start()
-        def _send_handshake():
-            time.sleep(0.1)
-            handshake = json.dumps({
-                "type": "handshake",
-                "id":   self.drone.domain_id
-            })
-            self._log("info", f"Sending handshake: {handshake}")
-            self.client.send(handshake)
 
-        threading.Thread(target=_send_handshake, daemon=True).start()
+    def handle_unity_disconnect(self):
+        self._log("warn", "Unity link lost → preserving active mission, clearing the rest, then queuing RTL→LAND")
+        # 1) clear out any future missions
+        self.drone.mission_queue.clear()
 
+        # 2) queue up an RTL, then a LAND so that it happens immediately after the current mission finishes
+        rtl_cmd = {
+            "type":    "command",
+            "command": "mode",
+            "mode":    "RTL",
+            "id":      self.drone.domain_id
+        }
+        land_cmd = {
+            "type":    "command",
+            "command": "mode",
+            "mode":    "LAND",
+            "id":      self.drone.domain_id
+        }
+        self.drone.command_queue.append(rtl_cmd)
+        self.drone.command_queue.append(land_cmd)
+        
     def shutdown(self):
         self._log("info", "Shutting down TCP and drone...")
         if self.tcp_server:

@@ -20,6 +20,7 @@ from ros.commands.clear_mission_command import ClearMissionCommand
 from ros.commands.set_current_mission_command import SetCurrentMissionCommand
 from ros.commands.set_home_command import SetHomeCommand
 from ros.commands.param_set_command import ParamSetCommand
+from ros.commands.pos_global_command import GlobalPositionCommand
 
 class CommandDispatcher:
     """
@@ -43,6 +44,7 @@ class CommandDispatcher:
             "set_current_mission": SetCurrentMissionCommand(logger=self.logger),
             "set_home": SetHomeCommand(logger=self.logger),
             "param_set": ParamSetCommand(logger=self.logger),
+            "pos_global": GlobalPositionCommand(logger=self.logger),
         }
 
         self.logger.info(f"[CommandDispatcher] Initialized with commands: {list(self.command_map.keys())}")

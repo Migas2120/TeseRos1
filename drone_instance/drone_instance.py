@@ -26,6 +26,8 @@ telemetry_log_file = os.path.join(package_root, "logs", log_filename)
 from node_wrapper.node_wrapper import NodeWrapper
 from telemetry.telemetry_manager import TelemetryManager
 from mission.mission import Mission, PrioritizedMission
+from telemetry.health_monitor import TelemetryHealthMonitor, TelemetryHealth    
+from geo.geo_converter import GeoConverter
 
 
 
@@ -66,6 +68,17 @@ class DroneInstance:
             log_interval=1.0
         )
 
+        self.telemetry_health = TelemetryHealthMonitor(
+            window_sec=3.0,
+            max_stale_sec_pose=0.5,
+            max_stale_sec_gps=1.5,
+            max_jump_m=2.0,
+            max_vel_mps=5.0,
+            jitter_m_mad_limit=0.4,
+            mad_k=3.5
+        )
+        self.telemetry_degraded = False
+
         # ——————————————————————————————————————————————
         # Flight State Flags
         # ——————————————————————————————————————————————
@@ -81,6 +94,9 @@ class DroneInstance:
         self.abort_locked      = False
         self.mission_abort_lock = False
         self.returning_to_base  = False
+        self.use_global_fallback = False
+        
+        self.geo = GeoConverter()
 
         # ——————————————————————————————————————————————
         # Manual Control Mode
@@ -129,6 +145,11 @@ class DroneInstance:
         if self._check_battery_fail_safe():
             return  
         
+        health = self._check_telemetry_health()
+        if health and health.degraded and not self.use_global_fallback:
+            # Telemetry bad and no GPS fallback → pause
+            return
+
         # 3) Manual mode bypass
         if self.manual_mode:
             return
@@ -197,20 +218,38 @@ class DroneInstance:
                 self._log("debug", f"Waiting to reach takeoff altitude: z={pose['z']:.2f}")
                 return
 
-        # 5. Proceed with mission as usual
+        # 5. Proceed with mission (local pose or GPS fallback)
         if self._mission_is_complete(mission):
             self._finish_mission()
             return
 
-        target_wp_data = mission.waypoints[mission.current_wp_index]
+        target_wp_data   = mission.waypoints[mission.current_wp_index]
         target_wp_coords = target_wp_data["coords"]
-        dist = self._compute_distance(pose, target_wp_coords)
-        self._log("debug", f"Distance to waypoint: {dist:.2f} meters")
 
-        if self._has_reached_waypoint(dist):
-            self._complete_current_waypoint(mission)
+        if self.use_global_fallback and getattr(self, "geo", None) and self.geo.has_origin:
+            cur_gps = self._get_current_gps()
+            if not cur_gps:
+                self._log("warn", "GPS fallback active but no current GPS fix; skipping tick")
+                return
+            tgt_lla = self._to_lla_cached(target_wp_data)
+            dist3, horiz, dz = self._compute_distance_lla(tgt_lla, cur_gps)
+            self._log("debug", f"[GPS] dist3={dist3:.2f}m (horiz={horiz:.2f}m, dz={dz:.2f}m)")
+
+            # GPS reach criteria (tune as needed)
+            reached = (horiz < 1.5 and abs(dz) < 1.0) or dist3 < 2.0
+            if reached:
+                self._complete_current_waypoint(mission)
+            else:
+                # reuse retry logic with GPS-based distance
+                self._handle_unreached_waypoint(mission, target_wp_data, dist3)
         else:
-            self._handle_unreached_waypoint(mission, target_wp_data, dist)
+            # normal local pose path
+            dist = self._compute_distance(pose, target_wp_coords)
+            self._log("debug", f"Distance to waypoint: {dist:.2f} meters")
+            if self._has_reached_waypoint(dist):
+                self._complete_current_waypoint(mission)
+            else:
+                self._handle_unreached_waypoint(mission, target_wp_data, dist)
 
     def _try_start_next_mission(self) -> bool:
         # ——————————————————————————————————————————————
@@ -401,6 +440,27 @@ class DroneInstance:
                     mission.last_distance = None
 
     def _send_waypoint_command(self, waypoint):
+        """
+        waypoint is (x,y,z) in local frame. If fallback is active and we have a geo origin,
+        translate to LLA and publish a 'pos_global' command; otherwise publish local 'pos'.
+        """
+        if self.use_global_fallback and getattr(self, "geo", None) and self.geo.has_origin:
+            try:
+                lat, lon, alt = self.geo.enu_to_lla(waypoint[0], waypoint[1], waypoint[2])
+                self.node.publish_from_unity(json.dumps({
+                    "type": "command",
+                    "command": "pos_global",   # handled by your GlobalPositionCommand
+                    "id": self.domain_id,
+                    "lat": lat,
+                    "lon": lon,
+                    "alt": alt,
+                    "frame": "REL_ALT"         # change to "AMSL"/"TERRAIN" if needed
+                }))
+                self._log("info", f"GPS fallback: LLA setpoint lat={lat:.7f}, lon={lon:.7f}, alt={alt:.1f}")
+                return
+            except Exception as e:
+                self._log("error", f"Fallback LLA conversion failed, sending local pos. Err={e}")
+        
         fake_unity_cmd = {
             "command": "pos",
             "x": waypoint[0],
@@ -440,6 +500,41 @@ class DroneInstance:
             self.has_taken_off = False
             self.waiting_to_start_mission = False
 
+    # --- GPS helpers ---
+    def _get_current_gps(self):
+        tel = self.telemetry_manager.get_all_latest_status() or {}
+        gps = tel.get("gps") or {}
+        lat = gps.get("lat") or gps.get("latitude")
+        lon = gps.get("lon") or gps.get("longitude")
+        alt = gps.get("alt") or gps.get("altitude")
+        if None in (lat, lon, alt):
+            return None
+        return {"lat": float(lat), "lon": float(lon), "alt": float(alt)}
+
+    def _haversine_m(self, lat1, lon1, lat2, lon2):
+        from math import radians, sin, cos, sqrt, asin
+        R = 6371000.0
+        dlat = radians(lat2 - lat1)
+        dlon = radians(lon2 - lon1)
+        a = sin(dlat/2)**2 + cos(radians(lat1))*cos(radians(lat2))*sin(dlon/2)**2
+        return 2 * R * asin(sqrt(a))
+
+    def _compute_distance_lla(self, tgt_lla, cur_lla):
+        horiz = self._haversine_m(cur_lla["lat"], cur_lla["lon"], tgt_lla[0], tgt_lla[1])
+        dz = float(tgt_lla[2]) - float(cur_lla["alt"])
+        dist3 = (horiz**2 + dz**2) ** 0.5
+        return dist3, horiz, dz
+
+    def _to_lla_cached(self, wp_data):
+        # wp_data: {"coords": (x,y,z), ...}
+        if "lla" in wp_data:
+            return wp_data["lla"]
+        if not (getattr(self, "geo", None) and self.geo.has_origin):
+            raise RuntimeError("Geo origin not set; cannot convert to LLA")
+        x, y, z = wp_data["coords"]
+        lat, lon, alt = self.geo.enu_to_lla(x, y, z)
+        wp_data["lla"] = (lat, lon, alt)  # cache
+        return wp_data["lla"]
 
     def _check_battery_fail_safe(self) -> bool:
         #--————————————————————————————————————————————
@@ -496,13 +591,104 @@ class DroneInstance:
 
         return False
 
+    def _check_telemetry_health(self) -> Optional[TelemetryHealth]:
+        tel  = self.telemetry_manager.get_all_latest_status() or {}
+        pose = self.telemetry_manager.get_latest_pose() or None
+        gps  = tel.get("gps", {})  # expect keys: lat/lon/alt, hdop, satellites
+
+        # Try to bind ENU↔LLA origin when we first have decent pose+gps
+        if pose and gps:
+            self._try_init_geo_origin(pose, gps)
+
+        health = self.telemetry_health.update(pose=pose, gps=gps)
+        self._maybe_toggle_fallback(health, gps)
+
+        # If degraded, pause aggressive actions and hold position
+        if health.degraded:
+            if not self.telemetry_degraded:
+                self._log("warn", f"Telemetry degraded: {health.reason} (HDOP={health.hdop}, NSats={health.nsats})")
+                self.node.publish_to_unity({
+                    "type": "telemetry_health",
+                    "id": self.domain_id,
+                    "status": "degraded",
+                    "reason": health.reason,
+                    "hdop": health.hdop,
+                    "nsats": health.nsats
+                })
+
+            self.telemetry_degraded = True
+
+            # If we still have pose, hold locally; otherwise switch LOITER
+            if pose:
+                self.node.publish_from_unity(json.dumps({
+                    "type": "command", "command": "pos", "id": self.domain_id,
+                    "x": pose["x"], "y": pose["y"], "z": pose["z"]
+                }))
+            else:
+                self.node.publish_from_unity(json.dumps({
+                    "type":"command","command":"mode","mode":"LOITER","id":self.domain_id
+                }))
+        else:
+            if self.telemetry_degraded:
+                self._log("info", "Telemetry recovered.")
+                self.node.publish_to_unity({
+                    "type": "telemetry_health",
+                    "id": self.domain_id,
+                    "status": "ok"
+                })
+            self.telemetry_degraded = False
+
+        return health
 
 
+    def _try_init_geo_origin(self, pose: dict, gps: dict):
+        """
+        Bind local (x,y,z) to first good GPS fix to define ENU<->LLA origin.
+        Requires pose + gps with decent quality.
+        """
+        if self.geo.has_origin or not pose or not gps:
+            return
+
+        lat = gps.get("lat") or gps.get("latitude")
+        lon = gps.get("lon") or gps.get("longitude")
+        alt = gps.get("alt") or gps.get("altitude")
+        nsats = gps.get("satellites") or gps.get("nsats")
+        hdop  = gps.get("hdop") or gps.get("h_acc")
+
+        if lat is None or lon is None or alt is None:
+            return
+        # minimally decent fix (tune as needed)
+        if (nsats is not None and int(nsats) < 6) or (hdop is not None and float(hdop) > 2.0):
+            return
+
+        self.geo.set_origin(float(lat), float(lon), float(alt),
+                            x0=float(pose["x"]), y0=float(pose["y"]), z0=float(pose["z"]))
+        self._log("info", f"Geo origin set @ LLA=({float(lat):.7f},{float(lon):.7f},{float(alt):.1f}) "
+                        f"⇄ local=({pose['x']:.2f},{pose['y']:.2f},{pose['z']:.2f})")
+
+    def _maybe_toggle_fallback(self, health, gps: dict):
+        """
+        Enable GPS fallback when pose is bad but GPS is OK; disable when recovered.
+        """
+        if health.degraded:
+            pose_bad = (health.pose_stale or health.jitter_high or health.jump_detected or health.vel_spike)
+            gps_ok   = (not health.gps_stale) and (not health.gps_poor)
+            if pose_bad and gps_ok and not self.use_global_fallback:
+                self.use_global_fallback = True
+                self._log("warn", "Enabling GPS GLOBAL setpoint fallback (pose degraded, GPS OK).")
+            return
+
+        # recovered
+        if self.use_global_fallback:
+            self.use_global_fallback = False
+            self._log("info", "Disabling GPS fallback (telemetry recovered).")
 
     """
     Portion of the code that handles mission editing commands.
     This includes adding, removing, and moving waypoints in the active mission.
     """
+
+
     def _handle_edit_mission(self, data: dict):
         if self.active_mission is None:
             self._log("warn", "Edit mission requested, but no active mission.")

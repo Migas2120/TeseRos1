@@ -1,155 +1,39 @@
-import socket
+# plot_map_area_points.py
 import json
-import time
-import random
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
+from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
 
+# ==== paste your two log payloads here (just the JSON object) ====
+s1 = r'''{"type":"map_area","mission_id":"Mission_6393","points":[{"x":1.1221938133239747,"y":-10.962727546691895,"z":2.7507143020629885},{"x":0.975363552570343,"y":-10.035676002502442,"z":2.7507143020629885},{"x":0.5492451786994934,"y":-9.199372291564942,"z":2.7507143020629885},{"x":-0.11445008218288422,"y":-8.535676956176758,"z":2.7507143020629885},{"x":-0.9507551193237305,"y":-8.109559059143067,"z":2.7507143020629885},{"x":-1.8778057098388672,"y":-7.962728023529053,"z":2.7507143020629885},{"x":-2.804856061935425,"y":-8.109559059143067,"z":2.7507143020629885},{"x":-3.6411612033843996,"y":-8.535676956176758,"z":2.7507143020629885},{"x":-4.304858207702637,"y":-9.199373245239258,"z":2.7507143020629885},{"x":-4.730976581573486,"y":-10.035676002502442,"z":2.7507143020629885},{"x":-4.877807140350342,"y":-10.962727546691895,"z":2.7507143020629885},{"x":-4.730976104736328,"y":-11.88978099822998,"z":2.7507143020629885},{"x":-4.3048577308654789,"y":-12.726086616516114,"z":2.7507143020629885},{"x":-3.641160249710083,"y":-13.389782905578614,"z":2.7507143020629885},{"x":-2.8048551082611086,"y":-13.815899848937989,"z":2.7507143020629885},{"x":-1.877805471420288,"y":-13.962729454040528,"z":2.7507143020629885},{"x":-0.9507546424865723,"y":-13.815899848937989,"z":2.7507143020629885},{"x":-0.11444936692714691,"y":-13.38978099822998,"z":2.7507143020629885},{"x":0.5492449402809143,"y":-12.726086616516114,"z":2.7507143020629885},{"x":0.975363552570343,"y":-11.889779090881348,"z":2.7507143020629885},{"x":1.1221938133239747,"y":-10.962727546691895,"z":12.750711441040039},{"x":0.975363552570343,"y":-10.035676002502442,"z":12.750711441040039},{"x":0.5492451786994934,"y":-9.199372291564942,"z":12.750711441040039},{"x":-0.11445008218288422,"y":-8.535676956176758,"z":12.750711441040039},{"x":-0.9507551193237305,"y":-8.109559059143067,"z":12.750711441040039},{"x":-1.8778057098388672,"y":-7.962728023529053,"z":12.750711441040039},{"x":-2.804856061935425,"y":-8.109559059143067,"z":12.750711441040039},{"x":-3.6411612033843996,"y":-8.535676956176758,"z":12.750711441040039},{"x":-4.304858207702637,"y":-9.199373245239258,"z":12.750711441040039},{"x":-4.730976581573486,"y":-10.035676002502442,"z":12.750711441040039},{"x":-4.877807140350342,"y":-10.962727546691895,"z":12.750711441040039},{"x":-4.730976104736328,"y":-11.88978099822998,"z":12.750711441040039},{"x":-4.3048577308654789,"y":-12.726086616516114,"z":12.750711441040039},{"x":-3.641160249710083,"y":-13.389782905578614,"z":12.750711441040039},{"x":-2.8048551082611086,"y":-13.815899848937989,"z":12.750711441040039},{"x":-1.877805471420288,"y":-13.962729454040528,"z":12.750711441040039},{"x":-0.9507546424865723,"y":-13.815899848937989,"z":12.750711441040039},{"x":-0.11444936692714691,"y":-13.38978099822998,"z":12.750711441040039},{"x":0.5492449402809143,"y":-12.726086616516114,"z":12.750711441040039},{"x":0.975363552570343,"y":-11.889779090881348,"z":12.750711441040039}],"grid_spacing":1.0141853094100953,"vertical_step":3.3333323001861574,"priority":1,"preempt":false}'''
 
-def send(sock, command, delay=2):
-    print(f"[Test] Sending:\n{json.dumps(command, indent=2)}")
-    sock.sendall(json.dumps(command).encode('utf-8'))
-    time.sleep(delay)
+s2 = r'''{"type":"map_area","mission_id":"Mission_6393","points":[{"x":1.1221938133239747,"y":-10.962727546691895,"z":2.7507143020629885},{"x":0.975363552570343,"y":-10.035676002502442,"z":2.7507143020629885},{"x":0.5492451786994934,"y":-9.199372291564942,"z":2.7507143020629885},{"x":-0.11445008218288422,"y":-8.535676956176758,"z":2.7507143020629885},{"x":-0.9507551193237305,"y":-8.109559059143067,"z":2.7507143020629885},{"x":-1.8778057098388672,"y":-7.962728023529053,"z":2.7507143020629885},{"x":-2.804856061935425,"y":-8.109559059143067,"z":2.7507143020629885},{"x":-3.6411612033843996,"y":-8.535676956176758,"z":2.7507143020629885},{"x":-4.304858207702637,"y":-9.199373245239258,"z":2.7507143020629885},{"x":-4.730976581573486,"y":-10.035676002502442,"z":2.7507143020629885},{"x":-4.877807140350342,"y":-10.962727546691895,"z":2.7507143020629885},{"x":-4.730976104736328,"y":-11.88978099822998,"z":2.7507143020629885},{"x":-4.3048577308654789,"y":-12.726086616516114,"z":2.7507143020629885},{"x":-3.641160249710083,"y":-13.389782905578614,"z":2.7507143020629885},{"x":-2.8048551082611086,"y":-13.815899848937989,"z":2.7507143020629885},{"x":-1.877805471420288,"y":-13.962729454040528,"z":2.7507143020629885},{"x":-0.9507546424865723,"y":-13.815899848937989,"z":2.7507143020629885},{"x":-0.11444936692714691,"y":-13.38978099822998,"z":2.7507143020629885},{"x":0.5492449402809143,"y":-12.726086616516114,"z":2.7507143020629885},{"x":0.975363552570343,"y":-11.889779090881348,"z":2.7507143020629885},{"x":1.1221938133239747,"y":-10.962727546691895,"z":12.750711441040039},{"x":0.975363552570343,"y":-10.035676002502442,"z":12.750711441040039},{"x":0.5492451786994934,"y":-9.199372291564942,"z":12.750711441040039},{"x":-0.11445008218288422,"y":-8.535676956176758,"z":12.750711441040039},{"x":-0.9507551193237305,"y":-8.109559059143067,"z":12.750711441040039},{"x":-1.8778057098388672,"y":-7.962728023529053,"z":12.750711441040039},{"x":-2.804856061935425,"y":-8.109559059143067,"z":12.750711441040039},{"x":-3.6411612033843996,"y":-8.535676956176758,"z":12.750711441040039},{"x":-4.304858207702637,"y":-9.199373245239258,"z":12.750711441040039},{"x":-4.730976581573486,"y":-10.035676002502442,"z":12.750711441040039},{"x":-4.877807140350342,"y":-10.962727546691895,"z":12.750711441040039},{"x":-4.730976104736328,"y":-11.88978099822998,"z":12.750711441040039},{"x":-4.3048577308654789,"y":-12.726086616516114,"z":12.750711441040039},{"x":-3.641160249710083,"y":-13.389782905578614,"z":12.750711441040039},{"x":-2.8048551082611086,"y":-13.815899848937989,"z":12.750711441040039},{"x":-1.877805471420288,"y":-13.962729454040528,"z":12.750711441040039},{"x":-0.9507546424865723,"y":-13.815899848937989,"z":12.750711441040039},{"x":-0.11444936692714691,"y":-13.38978099822998,"z":12.750711441040039},{"x":0.5492449402809143,"y":-12.726086616516114,"z":12.750711441040039},{"x":0.975363552570343,"y":-11.889779090881348,"z":12.750711441040039}],"grid_spacing":1.0141853094100953,"vertical_step":3.3333323001861574,"priority":1,"preempt":false}'''
 
+# ==== parsing ====
+d1 = json.loads(s1)
+d2 = json.loads(s2)
 
-def create_cube_points(center_xy=(25, 25), size=20, min_z=5):
-    """
-    Generate the 8 corner points of a cube.
-    The bottom face will be at Z = min_z.
-    """
-    cx, cy = center_xy
-    s = size / 2
-    cz = s + min_z  # so that cz - s = min_z
+def xyz_arrays(points):
+    xs = [p["x"] for p in points]
+    ys = [p["y"] for p in points]
+    zs = [p["z"] for p in points]
+    return xs, ys, zs
 
-    corners = []
-    for dx in [-s, s]:
-        for dy in [-s, s]:
-            for dz in [-s, s]:
-                corners.append([cx + dx, cy + dy, cz + dz])
-    return corners
+x1, y1, z1 = xyz_arrays(d1["points"])
+x2, y2, z2 = xyz_arrays(d2["points"])
 
+# ==== plot ====
+fig = plt.figure()
+ax = fig.add_subplot(111, projection="3d")
+ax.scatter(x1, y1, z1, label=f"{d1['mission_id']} (n={len(x1)})", s=18)
+ax.plot(x1 + [x1[0]], y1 + [y1[0]], z1 + [z1[0]], alpha=0.6)  # close the loop visually
 
-def simulate_layering(points, vertical_step=2.5, grid_spacing=5.0):
-    """
-    Simulate the layering + gridding on the client side to visualize
-    roughly what your server does.
-    """
-    import trimesh
-    from shapely.geometry import Polygon, Point as ShapelyPoint
+ax.scatter(x2, y2, z2, label=f"{d2['mission_id']} (n={len(x2)})", marker="^", s=18)
+ax.plot(x2 + [x2[0]], y2 + [y2[0]], z2 + [z2[0]], alpha=0.6)
 
-    points_np = np.array(points)
-    hull = trimesh.convex.convex_hull(points_np)
-
-    z_min = np.min(points_np[:, 2])
-    z_max = np.max(points_np[:, 2])
-
-    z_layers = np.arange(z_min, z_max + vertical_step, vertical_step)
-    waypoints = []
-
-    for z in z_layers:
-        slice = hull.section(plane_origin=[0, 0, z], plane_normal=[0, 0, 1])
-        if slice is None:
-            continue
-
-        # ✅ Use modern API
-        path2D, T = slice.to_2D()
-
-        polys = path2D.polygons_full
-        if not polys:
-            continue
-
-        poly = polys[0]
-        shapely_poly = Polygon(list(poly.exterior.coords))
-
-        minx, miny, maxx, maxy = shapely_poly.bounds
-        y_vals = np.arange(miny, maxy + grid_spacing, grid_spacing)
-
-        for i, y in enumerate(y_vals):
-            x_vals = np.arange(minx, maxx + grid_spacing, grid_spacing)
-            row = []
-            for x in x_vals:
-                if shapely_poly.contains(ShapelyPoint(x, y)):
-                    # ✅ Transform planar XY back to world XYZ using T
-                    point_local = np.array([x, y, 0, 1])   # homogeneous
-                    point_world = T @ point_local          # apply transform
-                    row.append((point_world[0], point_world[1], point_world[2]))
-            if i % 2 == 1:
-                row.reverse()
-            waypoints.extend(row)
-
-    return waypoints
-
-def plot_shape(points, waypoints):
-    """
-    Plot the random corner points and the layered waypoints.
-    """
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-
-    # Plot corner points
-    corner_points = np.array(points)
-    ax.scatter(corner_points[:, 0], corner_points[:, 1], corner_points[:, 2],
-               color='red', label='Corner Points', s=50)
-
-    # Plot layered waypoints
-    if waypoints:
-        wps = np.array(waypoints)
-        ax.plot(wps[:, 0], wps[:, 1], wps[:, 2],
-                color='blue', marker='o', linestyle='-', label='Layered Waypoints')
-
-    ax.set_xlabel('X')
-    ax.set_ylabel('Y')
-    ax.set_zlabel('Z')
-    ax.set_title('Random 3D Shape + Sliced Waypoints')
-    ax.legend()
-    plt.show()
-
-
-def main():
-    host = "127.0.0.1"
-    port = 65432
-
-    try:
-        print(f"[Test] Connecting to {host}:{port}...")
-
-        cube_points = create_cube_points()
-        # Simulate the layering for your own inspection
-        layered_waypoints = simulate_layering(cube_points)
-
-        # Show the plot
-        plot_shape(cube_points, layered_waypoints)
-
-        # Connect and send to server
-        with socket.create_connection((host, port), timeout=5) as sock:
-            print("[Test] Connected.")
-
-            map_area_command = {
-                "type": "map_area",
-                "mission_id": "test_vertical_layering",
-                "points": cube_points,
-                "vertical_step": 2.5,
-                "grid_spacing": 5.0,
-                "priority": 3,
-                "preempt": True
-            }
-            send(sock, map_area_command, delay=5)
-
-            # Let mission run briefly
-            time.sleep(10)
-
-            # Land
-            send(sock, {
-                "type": "command",
-                "command": "land",
-                "id": 0
-            })
-
-            print("[Test] Vertical layering test completed.")
-
-    except Exception as e:
-        print(f"[Test] Error: {e}")
-
-
-if __name__ == "__main__":
-    main()
+ax.set_xlabel("X (m)")
+ax.set_ylabel("Y (m)")
+ax.set_zlabel("Z (m)")
+ax.set_title("map_area: input boundary points (Unity → CDS)")
+ax.legend()
+plt.tight_layout()
+plt.show()

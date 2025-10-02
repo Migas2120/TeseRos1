@@ -13,11 +13,18 @@ class PoseHandler(TelemetryHandlerBase):
     def __init__(self, logger=None):
         super().__init__(logger)
         self._latest = None
+        self._offset = None
 
         self.sub = rospy.Subscriber('/mavros/local_position/pose', PoseStamped, self._callback)
         self.logger.info("[PoseHandler] Subscribed to /mavros/local_position/pose")
 
-    def _callback(self, msg):
+    def _callback(self, msg: PoseStamped):
+        if self._offset is None:
+            # First message: take its position as offset
+            p = msg.pose.position
+            self._offset = {"x": p.x, "y": p.y, "z": p.z}
+            self.logger.info(f"[PoseHandler] Offset initialized: {self._offset}")
+
         self._latest = msg
 
     def get_serialized(self):
@@ -37,3 +44,7 @@ class PoseHandler(TelemetryHandlerBase):
             p = self._latest.pose.position
             return {"x": p.x, "y": p.y, "z": p.z}
         return None
+
+    def get_offset(self):
+        """Return the initial offset (first reading), or None if not initialized yet."""
+        return self._offset

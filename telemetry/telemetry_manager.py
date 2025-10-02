@@ -81,6 +81,12 @@ class TelemetryManager:
             if hasattr(handler, "get_pose"):
                 return handler.get_pose()
         return None
+    
+    def get_pose_offset(self):
+        for handler in self.handlers:
+            if hasattr(handler, "get_offset"):
+                return handler.get_offset()
+        return None
 
     def shutdown(self):
         self._stop_flag.set()

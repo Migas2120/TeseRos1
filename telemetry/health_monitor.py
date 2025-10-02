@@ -30,11 +30,11 @@ class TelemetryHealthMonitor:
     def __init__(
         self,
         window_sec: float = 3.0,
-        max_stale_sec_pose: float = 0.5,
-        max_stale_sec_gps: float = 1.5,
-        max_jump_m: float = 2.0,
-        max_vel_mps: float = 5.0,
-        jitter_m_mad_limit: float = 0.4,
+        max_stale_sec_pose: float = 3.0,
+        max_stale_sec_gps: float = 4.0,
+        max_jump_m: float = 5.0,
+        max_vel_mps: float = 10.0,
+        jitter_m_mad_limit: float = 1.0,
         mad_k: float = 3.5
     ):
         self.window_sec = window_sec

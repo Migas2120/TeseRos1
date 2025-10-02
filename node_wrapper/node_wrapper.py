@@ -15,7 +15,7 @@ from command_dispatcher.command_dispatcher import CommandDispatcher
 
 
 class NodeWrapper:
-    def __init__(self, logger=None, drone_id=11):
+    def __init__(self, logger=None, drone_id=11, unsafe: bool = False):
         self.logger = logger or rospy.loginfo
         self.drone_id = drone_id
 

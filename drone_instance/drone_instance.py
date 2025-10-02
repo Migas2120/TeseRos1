@@ -21,6 +21,9 @@ package_root = os.path.abspath(os.path.join(current_dir, '..')) # .../ros1_serve
 sys.path.insert(0, package_root)
 
 log_filename = f"telemetry_{datetime.datetime.now():%Y%m%d_%H%M%S}.jsonl"
+cli_filename = f"cli_{datetime.datetime.now():%Y%m%d_%H%M%S}.log"
+
+cli_log_file = os.path.join(package_root, "cli_logs", cli_filename)
 telemetry_log_file = os.path.join(package_root, "logs", log_filename)
 
 from node_wrapper.node_wrapper import NodeWrapper
@@ -38,18 +41,24 @@ class DroneInstance:
     Represents a single drone running on a companion PC with its own mission logic.
     """
 
-    def __init__(self, domain_id: int, logger=None, on_landing: Optional[Callable]=None):
+    def __init__(self, domain_id: int, logger=None, on_landing: Optional[Callable]=None, unsafe: bool = False):
         # ——————————————————————————————————————————————
         # Identification & Logging
         # ——————————————————————————————————————————————
         self.domain_id = domain_id
         self.node_name = f"drone_instance_{domain_id}"
         self.logger    = logger
+        self.unsafe    = unsafe
+        self.cli_log_file = cli_log_file
 
+        if self.cli_log_file:
+            cli_log_dir = os.path.dirname(self.cli_log_file)
+            if cli_log_dir and not os.path.exists(cli_log_dir):
+                os.makedirs(cli_log_dir)
         # ——————————————————————————————————————————————
         # ROS Node Wrapper & Communication
         # ——————————————————————————————————————————————
-        self.node = NodeWrapper(logger=self.logger, drone_id=self.domain_id)
+        self.node = NodeWrapper(logger=self.logger, drone_id=self.domain_id, unsafe=self.unsafe)
 
         # ——————————————————————————————————————————————
         # Mission Queues & Command Buffer
@@ -125,9 +134,8 @@ class DroneInstance:
         # ——————————————————————————————————————————————
         self.on_landing = on_landing
 
-
-
-        self._log("info", f"Initializing DroneInstance with domain ID {self.domain_id}")
+        mode = "UNSAFE" if self.unsafe else "SAFE"
+        self._log("info", f"Initializing DroneInstance with domain ID {self.domain_id} [{mode} mode]")
 
     def tick(self):
 
@@ -145,11 +153,15 @@ class DroneInstance:
         if self._check_battery_fail_safe():
             return  
         
+        """
         health = self._check_telemetry_health()
         if health and health.degraded and not self.use_global_fallback:
             # Telemetry bad and no GPS fallback → pause
             return
+        """
 
+        
+        
         # 3) Manual mode bypass
         if self.manual_mode:
             return
@@ -172,37 +184,54 @@ class DroneInstance:
         pose = self.telemetry_manager.get_latest_pose()
         status = telemetry.get("status", {}) if telemetry else {}
 
-        if not status or not pose:
+        if not pose and not self.use_global_fallback:
+            self._log("warn", "Mission execution halted: no pose and GPS fallback disabled.")
             return
 
-        # 1. Arm if needed
-        if not status.get("armed", False):
-            self._log("info", "Drone not armed. Sending arm command.")
-            self.node.publish_from_unity(json.dumps({
-                "type": "command",
-                "command": "arm",
-                "id": self.domain_id
-            }))
+        if not status and not self.unsafe:
+            self._log("warn", "Mission execution halted: no status and not in unsafe mode.")
             return
 
-        # 2. Switch to GUIDED mode if not already
-        if status.get("mode") != "GUIDED":
-            self._log("info", "Switching to GUIDED mode.")
-            self.node.publish_from_unity(json.dumps({
-                "type": "command",
-                "command": "mode",
-                "mode": "GUIDED",
-                "id": self.domain_id
-            }))
-            return
+        pose_z = None
+        if pose and self.telemetry_manager.get_pose_offset():
+            offset_z = self.telemetry_manager.get_pose_offset()["z"]
+            pose_z = pose["z"] - offset_z
 
-        # 3. Take off if we haven't yet
+        if pose_z is not None and pose_z > 1.5:
+            self.has_taken_off = True
+        
+        takeoff_altitude = 2.0 + self.telemetry_manager.get_pose_offset()["z"]
+
+
+        # Only handle arming + GUIDED mode before takeoff
         if not self.has_taken_off:
-            self._log("info", "Initiating takeoff to 5.0m.")
+            # 1. Arm if not armed
+            if not status.get("armed", False):
+                self._log("info", "Drone not armed. Sending arm command.")
+                self.node.publish_from_unity(json.dumps({
+                    "type": "command",
+                    "command": "arm",
+                    "id": self.domain_id
+                }))
+                return
+
+            # 2. Switch to GUIDED mode if not already
+            if status.get("mode") != "GUIDED":
+                self._log("info", "Switching to GUIDED mode.")
+                self.node.publish_from_unity(json.dumps({
+                    "type": "command",
+                    "command": "mode",
+                    "mode": "GUIDED",
+                    "id": self.domain_id
+                }))
+                return
+
+            # 3. Take off if we haven't yet
+            self._log("info", "Initiating takeoff to 2.0m.")
             self.node.publish_from_unity(json.dumps({
                 "type": "command",
                 "command": "takeoff",
-                "altitude": 2.0,
+                "altitude": takeoff_altitude,
                 "id": self.domain_id
             }))
             self.has_taken_off = True
@@ -211,7 +240,7 @@ class DroneInstance:
 
         # 4. Wait until drone reaches takeoff altitude
         if self.waiting_to_start_mission:
-            if pose["z"] >= 1.5:
+            if pose["z"] >= takeoff_altitude - 0.5:
                 self._log("info", "Reached takeoff altitude. Starting mission.")
                 self.waiting_to_start_mission = False
             else:
@@ -373,11 +402,11 @@ class DroneInstance:
     def _compute_distance(self, pose, target):
         dx = target[0] - pose["x"]
         dy = target[1] - pose["y"]
-        dz = target[2] - pose["z"]
+        dz = ( target[2] + self.telemetry_manager.get_pose_offset()["z"]) - pose["z"] 
         return sqrt(dx**2 + dy**2 + dz**2)
 
     def _has_reached_waypoint(self, dist):
-        return dist < 0.2
+        return dist < 0.5
 
     def _complete_current_waypoint(self, mission):
         idx = mission.current_wp_index
@@ -390,7 +419,7 @@ class DroneInstance:
 
         # 1) start hold if needed
         if hold_duration > 0 and not self.is_holding:
-            self._log("info",  f"⏸ Starting hold at waypoint #{idx+1} for {hold_duration}s")
+            self._log("info",  f"Starting hold at waypoint #{idx+1} for {hold_duration}s")
             self.hold_start_time = time.time()
             self.is_holding       = True
             return
@@ -772,7 +801,7 @@ class DroneInstance:
             telemetry = self.telemetry_manager.get_all_latest_status()
             status = telemetry.get("status", {}) if telemetry else {}
             pose = self.telemetry_manager.get_latest_pose()
-            if (status and not status.get("armed", False)) or (pose and pose["z"] < 0.5):
+            if (status and not status.get("armed", False)) or (pose and pose["z"] < self.telemetry_manager.get_pose_offset()["z"] + 0.5):
                 self.has_taken_off = False
                 self.waiting_to_start_mission = False
                 self._log("debug", "Resetting takeoff flags (drone on ground).")
@@ -1004,8 +1033,17 @@ class DroneInstance:
 
     def _log(self, level: str, msg: str):
         tag = f"[DroneInstance {self.domain_id}]"
+        line = f"{tag} {msg}"
+        
         if self.logger:
             log_fn = getattr(self.logger, level, self.logger.info)
-            log_fn(f"{tag} {msg}")
+            log_fn(line)
         else:
-            print(f"{tag} {msg}")
+            print(line)
+        
+        try:
+            with open(self.cli_log_file, "a") as f:
+                f.write(line + "\n")
+        except Exception as e:
+            # fallback, don't let logging crash the app
+            print(f"{tag} Failed to write log file: {e}")

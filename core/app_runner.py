@@ -22,14 +22,15 @@ class AppRunner:
     Accepts TCP input from Unity and forwards it to the drone's control interface.
     """
 
-    def __init__(self, logger):
+    def __init__(self, logger, unsafe: bool = False):
         self.logger = logger
+        self.unsafe = unsafe
         self.tcp_server = None
         self.tcp_server_thread = None
 
         self.client: TCPClient | None = None
 
-        self.drone = DroneInstance(domain_id=0, logger=self.logger, on_landing=self.shutdown)
+        self.drone = DroneInstance(domain_id=0, logger=self.logger, on_landing=self.shutdown, unsafe=self.unsafe)
         self._log("info", "AppRunner initialized with 1 DroneInstance (ID 0)")
 
     def start(self):

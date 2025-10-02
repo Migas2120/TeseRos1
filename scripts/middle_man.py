@@ -18,6 +18,7 @@ def main():
     parser = argparse.ArgumentParser(description="ROS 1 MiddleMan single-drone server")
     parser.add_argument("--debug", action="store_false", help="Enable debug logging")
     parser.add_argument("--ip",    required=True,        help="Unity host IP address")
+    parser.add_argument("--unsafe", action="store_true",  help="Run in UNSAFE mode (bypass safety checks)")
     args, _ = parser.parse_known_args()
 
     # ROS node init
@@ -28,9 +29,10 @@ def main():
     logger = init_logger(debug=args.debug)
     logger.info("[Main] Logger initialized")
     logger.info("[Main] Debug mode enabled" if args.debug else "[Main] Running in normal mode")
+    logger.warning("[Main] UNSAFE MODE ENABLED — safety checks will be bypassed!") if args.unsafe else logger.info("[Main] Safe mode active")
 
     # App startup
-    app = AppRunner(logger)
+    app = AppRunner(logger, unsafe=args.unsafe)
     logger.info("[Main] AppRunner instance created")
 
     app.start()

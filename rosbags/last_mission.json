@@ -1,0 +1,49 @@
+{
+  "missions": [
+    {
+      "type": "add_mission",
+      "mission_id": "path_mission_1",
+      "waypoints": [
+        {"coords": [0.0, 0.0, 4.0], "hold_duration": 0},
+        {"coords": [4.0, 0.0, 4.0], "hold_duration": 0},
+        {"coords": [8.0, 0.0, 4.0], "hold_duration": 0},
+        {"coords": [12.0, 0.0, 4.0], "hold_duration": 0},
+        {"coords": [16.0, 0.0, 4.0], "hold_duration": 0}
+      ],
+      "priority": 5,
+      "mode": "once",
+      "patrol_loops": 2,
+      "preempt": false
+    },
+    {
+      "type": "add_mission",
+      "mission_id": "path_mission_2_preempt",
+      "waypoints": [
+        {"coords": [5.0, 5.0, 4.0], "hold_duration": 0},
+        {"coords": [7.82842712474619, 7.82842712474619, 4.0], "hold_duration": 0},
+        {"coords": [10.65685424949238, 10.65685424949238, 4.0], "hold_duration": 0},
+        {"coords": [13.485281374238571, 13.48528137423857, 4.0], "hold_duration": 0},
+        {"coords": [16.31370849898476, 16.31370849898476, 4.0], "hold_duration": 0},
+        {"coords": [19.14213562373095, 19.14213562373095, 4.0], "hold_duration": 0},
+        {"coords": [21.970562748477143, 21.97056274847714, 4.0], "hold_duration": 0},
+        {"coords": [24.79898987322333, 24.798989873223327, 4.0], "hold_duration": 0},
+        {"coords": [27.627416997969522, 27.62741699796952, 4.0], "hold_duration": 0},
+        {"coords": [30.455844122715714, 30.45584412271571, 4.0], "hold_duration": 0},
+        {"coords": [33.2842712474619, 33.2842712474619, 4.0], "hold_duration": 0},
+        {"coords": [36.112698372208094, 36.11269837220809, 4.0], "hold_duration": 0},
+        {"coords": [38.941125496954285, 38.94112549695428, 4.0], "hold_duration": 0},
+        {"coords": [41.76955262170048, 41.76955262170047, 4.0], "hold_duration": 0},
+        {"coords": [44.59797974644666, 44.597979746446654, 4.0], "hold_duration": 0},
+        {"coords": [47.42640687119285, 47.426406871192846, 4.0], "hold_duration": 0},
+        {"coords": [50.254833995939045, 50.25483399593904, 4.0], "hold_duration": 0},
+        {"coords": [53.083261120685236, 53.08326112068523, 4.0], "hold_duration": 0},
+        {"coords": [55.91168824543143, 55.91168824543142, 4.0], "hold_duration": 0},
+        {"coords": [58.74011537017761, 58.740115370177605, 4.0], "hold_duration": 0}
+      ],
+      "priority": 5,
+      "mode": "once",
+      "patrol_loops": 2,
+      "preempt": true
+    }
+  ]
+}

@@ -719,43 +719,63 @@ class DroneInstance:
 
 
     def _handle_edit_mission(self, data: dict):
-        if self.active_mission is None:
-            self._log("warn", "Edit mission requested, but no active mission.")
-            return
-
+        mission_id = data.get("mission_id")
         action = data.get("action")
         index = data.get("index")
         wp = data.get("waypoint")
 
+        # --- find which mission to edit ---
+        target_mission = None
+        if self.active_mission and (not mission_id or self.active_mission.mission_id == mission_id):
+            target_mission = self.active_mission
+        else:
+            for m in self.paused_missions:
+                if m.mission_id == mission_id:
+                    target_mission = m
+                    break
+            if target_mission is None:
+                for item in self.mission_queue:
+                    if item.mission_id == mission_id:
+                        target_mission = item.mission
+                        break
+
+        if not target_mission:
+            self._log("warn", f"Edit mission requested for unknown mission_id '{mission_id}'.")
+            return
+
         try:
             if action == "remove":
-                removed = self.active_mission.waypoints.pop(index)
+                removed = target_mission.waypoints.pop(index)
                 self._log("info", f"Removed waypoint at index {index}: {removed}")
 
-                # Adjust index if we removed a wp before the current one
-                if index <= self.active_mission.current_wp_index and self.active_mission.current_wp_index > 0:
-                    self.active_mission.current_wp_index -= 1
+                # Adjust pointer if this was the active mission
+                if target_mission == self.active_mission and \
+                index <= target_mission.current_wp_index and \
+                target_mission.current_wp_index > 0:
+                    target_mission.current_wp_index -= 1
 
             elif action == "add":
                 if not wp or len(wp) != 3:
                     raise ValueError("Waypoint must be a 3-element list [x, y, z]")
-                self.active_mission.waypoints.insert(index, tuple(wp))
-                self._log("info", f"Added waypoint at index {index}: {wp}")
 
-                if index <= self.active_mission.current_wp_index:
-                    self.active_mission.current_wp_index += 1
+                new_wp = {"coords": list(wp)}
+                target_mission.waypoints.insert(index, new_wp)
+                self._log("info", f"Added waypoint at index {index}: {new_wp}")
+
+                if target_mission == self.active_mission and index <= target_mission.current_wp_index:
+                    target_mission.current_wp_index += 1
 
             elif action == "move":
                 if not wp or len(wp) != 3:
                     raise ValueError("Waypoint must be a 3-element list [x, y, z]")
-                self.active_mission.waypoints[index] = tuple(wp)
+                target_mission.waypoints[index] = {"coords": list(wp)}
                 self._log("info", f"Updated waypoint at index {index} to: {wp}")
 
             else:
                 self._log("warn", f"Unknown edit_mission action: {action}")
 
         except Exception as e:
-            self._log("error", f"Failed to edit mission: {e}")
+            self._log("error", f"Failed to edit mission '{mission_id}': {e}")
 
     def _handle_add_mission(self, data: dict):
         try:
@@ -953,6 +973,8 @@ class DroneInstance:
             self._log("warn", f"Mission '{mission_id}' not found in queue for priority update.")
 
     def _handle_manual_control(self, data: dict):
+        self._log("info", f"Node type: {type(self.node)} has publish_from_unity: {getattr(self.node, 'publish_from_unity', None)}")
+
         if not self.manual_mode:
             self._log("warn", "Manual control received while not in manual_mode")
             return
@@ -960,6 +982,7 @@ class DroneInstance:
         if self.returning_to_base:
             self._log("warn", "Manual control ignored—return‐to‐base in progress")
             return
+
         axes = data.get("axes", {})
         # map sticks → velocity
         x   =  axes.get("ly", 0.0) * 1.0   # forward/back
@@ -976,7 +999,7 @@ class DroneInstance:
             "z":       z,
             "yaw":     yaw
         }
-        self._log("debug", f"Manual VEL cmd: x={x:.2f}, y={y:.2f}, z={z:.2f}, yaw={yaw:.2f}")
+        self._log("info", f"Manual VEL cmd: x={x:.2f}, y={y:.2f}, z={z:.2f}, yaw={yaw:.2f}")
         self.node.publish_from_unity(json.dumps(cmd))
 
     def _handle_generic_command(self, data: dict):
@@ -998,6 +1021,14 @@ class DroneInstance:
     def _set_manual(self, enabled: bool):
         self.manual_mode = enabled
         self._log("info", f"{'Entered' if enabled else 'Exited'} MANUAL mode")
+
+        if not enabled:
+            try:
+                if hasattr(self.node.dispatcher, "vel_handler"):
+                    self.node.dispatcher.vel_handler.stop()
+                    self._log("info", "Stopped velocity streaming (manual mode off).")
+            except Exception as e:
+                self._log("error", f"Failed to stop velocity stream: {e}")
 
     """
     System wide code

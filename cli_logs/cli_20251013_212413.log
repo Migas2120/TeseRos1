@@ -1,0 +1,85 @@
+[DroneInstance 0] Initializing DroneInstance with domain ID 0 [SAFE mode]
+[DroneInstance 0] Battery percentage unavailable.
+[DroneInstance 0] Received message from Unity: {'type': 'map_area', 'mission_id': 'map_area_cube_1', 'points': [{'x': -5.0, 'y': -5.0, 'z': 1.0}, {'x': -5.0, 'y': -5.0, 'z': 11.0}, {'x': -5.0, 'y': 5.0, 'z': 1.0}, {'x': -5.0, 'y': 5.0, 'z': 11.0}, {'x': 5.0, 'y': -5.0, 'z': 1.0}, {'x': 5.0, 'y': -5.0, 'z': 11.0}, {'x': 5.0, 'y': 5.0, 'z': 1.0}, {'x': 5.0, 'y': 5.0, 'z': 11.0}], 'grid_spacing': 3.0, 'vertical_step': 2.0, 'priority': 80, 'preempt': False}
+[DroneInstance 0] Mission 'map_area_cube_1' added with priority 80 and 45 waypoints.
+[DroneInstance 0] Resetting takeoff flags (drone on ground).
+[DroneInstance 0] [3D Slicer] 45 waypoints generated from 3D hull between Z=1.00-11.00 every 2.0m.
+[DroneInstance 0] Starting mission: map_area_cube_1
+[DroneInstance 0] Drone not armed. Sending arm command.
+[DroneInstance 0] Switching to GUIDED mode.
+[DroneInstance 0] Initiating takeoff to 2.0m.
+[DroneInstance 0] Waiting to reach takeoff altitude: z=-0.01
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.13
+[DroneInstance 0] Waiting to reach takeoff altitude: z=1.23
+[DroneInstance 0] Reached takeoff altitude. Starting mission.
+[DroneInstance 0] Distance to waypoint: 4.59 meters
+[DroneInstance 0] Distance to waypoint: 4.12 meters
+[DroneInstance 0] Distance to waypoint: 1.90 meters
+[DroneInstance 0] Distance to waypoint: 0.31 meters
+[DroneInstance 0] _complete_current_waypoint: idx=0, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #1 to #2
+[DroneInstance 0] Distance to waypoint: 3.11 meters
+[DroneInstance 0] Distance to waypoint: 2.58 meters
+[DroneInstance 0] Received message from Unity: {'type': 'add_mission', 'mission_id': 'recon_task_2', 'waypoints': [[-5.0, -5.0, 5], [5.0, -5.0, 6], [5.0, 5.0, 6], [-5.0, 5.0, 5]], 'mode': 'once', 'priority': 95, 'preempt': False}
+[DroneInstance 0] Mission 'recon_task_2' added with priority 95 and 4 waypoints.
+[DroneInstance 0] Distance to waypoint: 0.93 meters
+[DroneInstance 0] Distance to waypoint: 0.08 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #2 to #3
+[DroneInstance 0] Distance to waypoint: 2.91 meters
+[DroneInstance 0] Distance to waypoint: 2.45 meters
+[DroneInstance 0] Distance to waypoint: 0.83 meters
+[DroneInstance 0] Distance to waypoint: 0.03 meters
+[DroneInstance 0] _complete_current_waypoint: idx=2, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #3 to #4
+[DroneInstance 0] Distance to waypoint: 2.97 meters
+[DroneInstance 0] Distance to waypoint: 2.46 meters
+[DroneInstance 0] Distance to waypoint: 0.81 meters
+[DroneInstance 0] Distance to waypoint: 0.02 meters
+[DroneInstance 0] _complete_current_waypoint: idx=3, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #4 to #5
+[DroneInstance 0] Distance to waypoint: 2.98 meters
+[DroneInstance 0] Distance to waypoint: 2.46 meters
+[DroneInstance 0] Distance to waypoint: 0.81 meters
+[DroneInstance 0] Distance to waypoint: 0.06 meters
+[DroneInstance 0] _complete_current_waypoint: idx=4, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #5 to #6
+[DroneInstance 0] Distance to waypoint: 2.86 meters
+[DroneInstance 0] Distance to waypoint: 2.40 meters
+[DroneInstance 0] Distance to waypoint: 0.78 meters
+[DroneInstance 0] Distance to waypoint: 0.04 meters
+[DroneInstance 0] _complete_current_waypoint: idx=5, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #6 to #7
+[DroneInstance 0] Distance to waypoint: 2.99 meters
+[DroneInstance 0] Distance to waypoint: 2.47 meters
+[DroneInstance 0] Distance to waypoint: 0.82 meters
+[DroneInstance 0] Distance to waypoint: 0.04 meters
+[DroneInstance 0] _complete_current_waypoint: idx=6, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #7 to #8
+[DroneInstance 0] Distance to waypoint: 3.05 meters
+[DroneInstance 0] Distance to waypoint: 2.52 meters
+[DroneInstance 0] Distance to waypoint: 0.86 meters
+[DroneInstance 0] Distance to waypoint: 0.06 meters
+[DroneInstance 0] _complete_current_waypoint: idx=7, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #8 to #9
+[DroneInstance 0] Distance to waypoint: 2.90 meters
+[DroneInstance 0] Distance to waypoint: 2.42 meters
+[DroneInstance 0] Distance to waypoint: 0.79 meters
+[DroneInstance 0] Distance to waypoint: 0.02 meters
+[DroneInstance 0] _complete_current_waypoint: idx=8, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #9 to #10
+[DroneInstance 0] Distance to waypoint: 8.82 meters
+[DroneInstance 0] Distance to waypoint: 8.15 meters
+[DroneInstance 0] Distance to waypoint: 5.16 meters
+[DroneInstance 0] Distance to waypoint: 2.11 meters
+[DroneInstance 0] Distance to waypoint: 0.29 meters
+[DroneInstance 0] _complete_current_waypoint: idx=9, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #10 to #11
+[DroneInstance 0] Distance to waypoint: 3.12 meters
+[DroneInstance 0] Distance to waypoint: 2.55 meters
+[DroneInstance 0] Distance to waypoint: 0.88 meters
+[DroneInstance 0] Distance to waypoint: 0.06 meters
+[DroneInstance 0] _complete_current_waypoint: idx=10, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #11 to #12
+[DroneInstance 0] Distance to waypoint: 2.91 meters
+[DroneInstance 0] Shutting down DroneInstance...

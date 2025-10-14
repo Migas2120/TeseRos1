@@ -101,14 +101,8 @@ class AppRunner:
             "mode":    "RTL",
             "id":      self.drone.domain_id
         }
-        land_cmd = {
-            "type":    "command",
-            "command": "mode",
-            "mode":    "LAND",
-            "id":      self.drone.domain_id
-        }
         self.drone.command_queue.append(rtl_cmd)
-        self.drone.command_queue.append(land_cmd)
+        self.drone.returning_to_base = True
         
     def shutdown(self):
         self._log("info", "Shutting down TCP and drone...")

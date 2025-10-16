@@ -15,6 +15,66 @@ import socket
 import select
 import logging
 
+import time
+import threading
+
+class ThroughputMonitor:
+    def __init__(self, logger, log_file=None):
+        self.logger = logger
+        self.rx_bytes = 0
+        self.tx_bytes = 0
+        self.last_time = time.time()
+        self.running = True
+        self._lock = threading.Lock()
+        self.log_file = log_file  # optional file path
+
+    def add_rx(self, n):
+        with self._lock:
+            self.rx_bytes += n
+
+    def add_tx(self, n):
+        with self._lock:
+            self.tx_bytes += n
+
+    def start(self):
+        threading.Thread(target=self._loop, daemon=True).start()
+
+    def _loop(self):
+        while self.running:
+            time.sleep(1.0)
+            with self._lock:
+                now = time.time()
+                elapsed = now - self.last_time
+                if elapsed <= 0:
+                    continue
+
+                rx_kbps = (self.rx_bytes * 8 / 1000) / elapsed
+                tx_kbps = (self.tx_bytes * 8 / 1000) / elapsed
+
+                # Log to console
+                self.logger.info(f"[Throughput] RX={rx_kbps:.2f} kbps | TX={tx_kbps:.2f} kbps")
+
+                # Also append to file
+                if self.log_file:
+                    try:
+                        with open(self.log_file, "a") as f:
+                            entry = {
+                                "timestamp": time.time(),
+                                "rx_kbps": rx_kbps,
+                                "tx_kbps": tx_kbps
+                            }
+                            f.write(json.dumps(entry) + "\n")
+                    except Exception as e:
+                        self.logger.error(f"[Throughput] Failed to write log: {e}")
+
+                # reset counters
+                self.rx_bytes = 0
+                self.tx_bytes = 0
+                self.last_time = now
+
+    def stop(self):
+        self.running = False
+
 
 class TCPServer:
     def __init__(self, ros_node, logger=None, host='127.0.0.1', port=65432):
@@ -36,6 +96,14 @@ class TCPServer:
         self.running = False
 
         self.recv_buffer = {}
+        self.throughput = ThroughputMonitor(self.logger)
+
+        throughput_log = os.path.join(
+            "/home/migasdrone/ros1_ws/src/ros1_server/logs",
+            f"throughput_{datetime.datetime.now():%Y%m%d_%H%M%S}.jsonl"
+        )
+        self.throughput = ThroughputMonitor(self.logger, log_file=throughput_log)
+
 
     def start(self):
         """Starts the TCP server loop."""
@@ -50,6 +118,7 @@ class TCPServer:
             self.running = True
 
             self.logger.info(f"[TCPServer] Listening on {self.host}:{self.port}")
+            self.throughput.start()
 
             while self.running:
                 read_sockets, _, exception_sockets = select.select(
@@ -80,6 +149,7 @@ class TCPServer:
     def _receive_message(self, sock):
         try:
             data = sock.recv(4096)
+            self.throughput.add_rx(len(data))
             if not data:
                 return self._disconnect_client(sock)
 
@@ -128,3 +198,4 @@ class TCPServer:
         for sock in self.sockets_list:
             sock.close()
         self.logger.info("[TCPServer] Stopped.")
+        self.throughput.stop()

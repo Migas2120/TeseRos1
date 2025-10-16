@@ -1,9 +1,10 @@
 # drone_instance.py
-MAX_PAUSED_MISSIONS = 3
+MAX_PAUSED_MISSIONS = 5
 
 from math import sqrt
 import datetime
 import time
+import uuid
 import json
 import numpy as np
 from collections import deque
@@ -13,6 +14,7 @@ import sys
 import os
 import numpy as np
 import trimesh
+import copy
 from shapely.geometry import Polygon, Point
 
 # Append ROS 1 package root directory to sys.path
@@ -383,15 +385,15 @@ class DroneInstance:
 
             resumed.waypoints = resumed.waypoints[resumed.start_index:]
             resumed.current_wp_index = 0
-
             self.active_mission = resumed
-
+            
             self.node.publish_to_unity({
                 "type":       "mission",
                 "id":          self.domain_id,
-                "mission_id":  self.active_mission.mission_id,
-                "status":      "started"
+                "mission_id":  resumed.mission_id,
+                "status":      "resumed"
             })
+
             return
 
         if self.mission_queue:
@@ -476,6 +478,12 @@ class DroneInstance:
         if self.use_global_fallback and getattr(self, "geo", None) and self.geo.has_origin:
             try:
                 lat, lon, alt = self.geo.enu_to_lla(waypoint[0], waypoint[1], waypoint[2])
+                # --- Latency Probe Start ---
+                send_time = time.perf_counter()
+                if hasattr(self.telemetry_manager, "track_command"):
+                    self.telemetry_manager.track_command("pos_global")
+                self._log("debug", f"LatencyProbe | Sent pos_global command at {send_time:.6f}")
+                # --- Latency Probe End ---
                 self.node.publish_from_unity(json.dumps({
                     "type": "command",
                     "command": "pos_global",   # handled by your GlobalPositionCommand
@@ -496,6 +504,13 @@ class DroneInstance:
             "y": waypoint[1],
             "z": waypoint[2]
         }
+        # --- Latency Probe Start ---
+        send_time = time.perf_counter()
+        if hasattr(self.telemetry_manager, "track_command"):
+            self.telemetry_manager.track_command("pos")
+        self._log("debug", f"LatencyProbe | Sent pos command at {send_time:.6f}")
+        # --- Latency Probe End ---
+
         self.node.publish_from_unity(json.dumps(fake_unity_cmd))
 
     def _handle_abort(self):
@@ -805,10 +820,25 @@ class DroneInstance:
                 paused = self.active_mission.pause(current_index=self.active_mission.current_wp_index)
                 self.paused_missions.append(paused)
 
+                self.node.publish_to_unity({
+                    "type": "mission",
+                    "id": self.domain_id,
+                    "mission_id": paused.mission_id,
+                    "status": "paused"
+                })
+
                 paused_ids = [m.mission_id for m in self.paused_missions]
                 self._log("debug", f"Paused mission chain: {paused_ids}")
 
                 self.active_mission = new_mission
+
+                self.node.publish_to_unity({
+                    "type":       "mission",
+                    "id":          self.domain_id,
+                    "mission_id":  self.active_mission.mission_id,
+                    "status":      "started"
+                })
+
             else:
                 heapq.heappush(self.mission_queue, PrioritizedMission(
                     priority=priority,
@@ -932,22 +962,6 @@ class DroneInstance:
         except Exception as e:
             self._log("error", f"Failed to handle map_area command: {e}")
 
-    def _handle_return_to_base(self):
-        self._log("info", "RTB requested — cancelling mission and switching to RTL mode.")
-
-        self.active_mission = None
-        self.command_queue.clear()
-        self.mission_abort_lock = True
-
-        self.node.publish_from_unity(json.dumps({
-            "type": "command",
-            "command": "mode",
-            "mode": "RTL",
-            "id": self.domain_id
-        }))
-    
-        self.returning_to_base = True
-
     def _handle_change_priority(self, data: dict):
         mission_id = data.get("mission_id")
         new_priority = data.get("priority")
@@ -973,8 +987,6 @@ class DroneInstance:
             self._log("warn", f"Mission '{mission_id}' not found in queue for priority update.")
 
     def _handle_manual_control(self, data: dict):
-        self._log("info", f"Node type: {type(self.node)} has publish_from_unity: {getattr(self.node, 'publish_from_unity', None)}")
-
         if not self.manual_mode:
             self._log("warn", "Manual control received while not in manual_mode")
             return
@@ -989,6 +1001,19 @@ class DroneInstance:
         y   = -axes.get("lx", 0.0) * 1.0   # left/right
         z   =  axes.get("ry", 0.0) * 0.5   # up/down
         yaw =  axes.get("rx", 0.0) * 0.5   # yaw rate
+
+        # --- Latency Probe Start ---
+        send_time = time.perf_counter()
+
+        # Compute velocity magnitude for latency adjustment
+        self.telemetry_manager.last_command_velocity = (
+            (abs(x)**2 + abs(y)**2 + abs(z)**2) ** 0.5
+        )
+
+        if hasattr(self.telemetry_manager, "track_command"):
+            self.telemetry_manager.track_command("vel")
+        self._log("debug", f"LatencyProbe | Sent vel command at {send_time:.6f}")
+        # --- Latency Probe End ---
 
         cmd = {
             "type":    "command",
@@ -1009,14 +1034,70 @@ class DroneInstance:
             return self._handle_abort()
         if cmd == "skip_wp":
             return self._handle_skip_waypoint()
+        if cmd == "pause":
+            return self._handle_pause()
+        if cmd == "resume":
+            return self._handle_resume()
 
         # If we’re in a mission, queue it
         if self.active_mission:
             self._log("info", "Mission active — queuing command for later execution.")
             self.command_queue.append(data)
         else:
-            # No mission, so send straight through
+            send_time = time.perf_counter()
+            data["_t_sent"] = send_time
+            self._log("debug", f"LatencyProbe | Sent {data['command']} id={data.get('_id')} at {send_time:.6f}")
+
+            # tell the TelemetryManager we’re tracking this command
+            if hasattr(self.telemetry_manager, "track_command"):
+                try:
+                    self.telemetry_manager.track_command(data.get("command"))
+                except Exception as e:
+                    self._log("error", f"LatencyProbe | track_command failed: {e}")
+
+            # now publish the command normally
             self.node.publish_from_unity(json.dumps(data))
+
+    def _handle_return_to_base(self):
+        """Handle Return-to-Base (RTL) command."""
+        self._log("info", "Return-to-Base requested — cancelling mission and switching to RTL mode.")
+
+        # 1. Cancel any active mission and clear the queue
+        if self.active_mission:
+            self._log("info", f"Aborting active mission '{self.active_mission.mission_id}' for RTL.")
+            self.active_mission = None
+
+        self.command_queue.clear()
+        self.mission_queue.clear()
+        self.paused_missions.clear()
+
+        # --- Latency Probe Start ---
+        send_time = time.perf_counter()
+        if hasattr(self.telemetry_manager, "track_command"):
+            self.telemetry_manager.track_command("mode")
+        self._log("debug", f"LatencyProbe | Sent mode=RTL at {send_time:.6f}")
+        # --- Latency Probe End ---
+
+        # 2. Switch flight mode to RTL
+        self.node.publish_from_unity(json.dumps({
+            "type": "command",
+            "command": "mode",
+            "mode": "RTL",
+            "id": self.domain_id
+        }))
+
+        # 3. Update flags to prevent new mission dispatch
+        self.returning_to_base = True
+        
+        # 4. Notify Unity via telemetry
+        self.node.publish_to_unity({
+            "type": "mission",
+            "id": self.domain_id,
+            "mission_id": "return_to_base",
+            "status": "started"
+        })
+
+        self._log("info", "Return-to-Base mode engaged.")
 
     def _set_manual(self, enabled: bool):
         self.manual_mode = enabled
@@ -1030,20 +1111,72 @@ class DroneInstance:
             except Exception as e:
                 self._log("error", f"Failed to stop velocity stream: {e}")
 
+    def _handle_pause(self):
+        """Pause the currently active mission and push it onto the paused stack."""
+        if not self.active_mission:
+            self._log("warn", "Pause command received but no active mission.")
+            return
+
+        paused = self.active_mission.pause(current_index=self.active_mission.current_wp_index)
+        self.paused_missions.append(paused)
+
+        self._log("info", f"Paused mission '{paused.mission_id}' at waypoint {paused.current_wp_index}.")
+        self.node.publish_to_unity({
+            "type": "mission",
+            "id": self.domain_id,
+            "mission_id": paused.mission_id,
+            "status": "paused"
+        })
+
+        # Clear the active mission
+        self.active_mission = None
+
+    def _handle_resume(self):
+        """Resume the most recently paused mission."""
+        if not self.paused_missions:
+            self._log("warn", "Resume command received but no paused missions available.")
+            return
+
+        resumed = self.paused_missions.pop()
+        self._log("info", f"Resuming paused mission '{resumed.mission_id}' from waypoint {resumed.current_wp_index}.")
+
+        # Restore mission progress and mark as active
+        resumed.waypoints = resumed.waypoints[resumed.start_index:]
+        resumed.current_wp_index = 0
+        self.active_mission = resumed
+
+        # Notify Unity
+        self.node.publish_to_unity({
+            "type": "mission",
+            "id": self.domain_id,
+            "mission_id": resumed.mission_id,
+            "status": "resumed"
+        })
+        
     """
     System wide code
     """
 
     def publish_from_unity(self, data: dict):
+
+        clean_data = copy.deepcopy(data)
+
+        probe_meta = {
+            "_t_received": time.perf_counter(),
+            "_id": data.get("command_id", str(uuid.uuid4()))
+        }
+        self._log("debug", f"LatencyProbe | Received {data.get('command', 'N/A')} id={probe_meta['_id']} at {probe_meta['_t_received']:.6f}")
+
         self._log("info", f"Received message from Unity: {data}")
-        msg_type = data.get("type")
-        cmd      = data.get("command")
+
+        msg_type = clean_data.get("type")
+        cmd      = clean_data.get("command")
 
         handler = self._msg_handlers.get((msg_type, cmd)) \
             or self._msg_handlers.get((msg_type, None))
 
         if handler:
-            handler(data)
+            handler(clean_data)
         else:
             self._log("warn", f"Unknown message type or structure: {data}")
 

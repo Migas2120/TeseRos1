@@ -3,6 +3,13 @@ import socket
 import threading
 import sys
 
+current_dir = os.path.dirname(os.path.abspath(__file__))        # .../ros1_server/scripts
+package_root = os.path.abspath(os.path.join(current_dir, '..')) # .../ros1_server
+sys.path.insert(0, package_root)
+
+
+from tcp.server import ThroughputMonitor
+
 class TCPClient:
     """
     A simple TCP client with callbacks for connect/disconnect/data.
@@ -22,18 +29,25 @@ class TCPClient:
         self.sock    = None
         self.running = False
         self.thread  = None
+        self.throughput = ThroughputMonitor(self.logger)
+
 
     def start(self):
         """Connect and start the receive thread."""
         try:
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.sock.connect((self.host, self.port))
+
+            self.sock.settimeout(None)
+            
             self.running = True
             if self.logger: self.logger.info(f"[TCPClient] Connected to {self.host}:{self.port}")
             if self.on_connected: self.on_connected()
+            self.throughput.start()
 
             self.thread = threading.Thread(target=self._recv_loop, daemon=True)
             self.thread.start()
+           
 
         except Exception as e:
             if self.logger: self.logger.error(f"[TCPClient] Could not connect: {e}")
@@ -46,6 +60,7 @@ class TCPClient:
             return
         try:
             self.sock.sendall(data.encode("utf-8"))
+            self.throughput.add_tx(len(data.encode("utf-8")))
         except Exception as e:
             if self.logger: self.logger.error(f"[TCPClient] Send error: {e}")
 
@@ -56,6 +71,7 @@ class TCPClient:
                 chunk = self.sock.recv(4096)
                 if not chunk:
                     break
+                self.throughput.add_rx(len(chunk))
                 text = chunk.decode("utf-8")
                 if self.on_data:
                     self.on_data(text)
@@ -79,3 +95,4 @@ class TCPClient:
             pass
         finally:
             if self.sock: self.sock.close()
+            self.throughput.stop()

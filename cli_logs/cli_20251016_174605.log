@@ -1,0 +1,734 @@
+[DroneInstance 0] Initializing DroneInstance with domain ID 0 [SAFE mode]
+[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'start_manual'}
+[DroneInstance 0] Entered MANUAL mode
+[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'takeoff', 'altitude': 3, 'id': 0}
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1031929}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.05, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1151367}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1200802}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1213768}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1263132}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1334388}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1426249}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1528769}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.08, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1733074}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.09, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.20742}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.10, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.2506772}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.13, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.2681898}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.13, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.2751291}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.14, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.297794}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.15, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.3269769}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.16, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.3393327}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.17, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.3577515}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.18, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.3947817}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.20, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4203489}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.21, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4370245}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.22, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4445273}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.22, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4511211}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.23, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4420847}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.22, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.431731}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.22, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.413758}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.21, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.40757}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.20, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4159267}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.21, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4221288}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.21, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4227804}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.21, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4256679}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.21, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4190594}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.21, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.535157}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.27, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5442694}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.27, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.6016748}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.30, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.663352}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.33, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.728967}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.36, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.7803317}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.39, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8484381}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.42, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9337308}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.47, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9811291}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.49, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9747876}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.49, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9710579}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.49, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9677507}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.48, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9620134}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.48, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9525994}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.48, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9396651}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.47, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9322195}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.47, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9294816}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.927678}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9254082}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9189204}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.908718}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.45, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8918781}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.45, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8775226}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.44, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8683202}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8592685}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8547051}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8508358}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8495045}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.42, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8523778}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8579632}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8641721}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8693225}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8766179}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.44, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8834926}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.44, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9112505}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9467857}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.47, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.975508}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.49, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9926019}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9874216}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.49, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9516143}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.48, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.9178321}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8888699}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.44, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8613559}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8437309}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.42, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8295177}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8189911}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8062575}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.40, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.7802457}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.39, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.7564658}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.38, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.7336065}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.37, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.711087}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.36, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.6843736}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.34, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.6647587}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.33, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.6462694}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.32, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.6246302}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.31, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.6239506}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.31, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.6207181}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.31, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5917041}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.30, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5810665}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.29, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5718408}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.29, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5549275}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.28, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5491658}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.27, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5431887}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.27, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5353498}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.27, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5317515}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.27, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5198523}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.26, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5024965}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.25, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4838347}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.24, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4715548}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.24, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4644123}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.23, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4553199}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.23, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4468417}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.22, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4397719}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.22, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.420475}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.21, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.3923907}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.20, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.3742175}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.19, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.349334}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.17, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.3113594}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.16, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.2910627}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.15, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.2789109}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.14, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.2627549}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.13, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.2515486}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.13, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.2307888}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.2101537}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.11, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1854191}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.09, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1559983}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.08, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1431935}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.132054}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1201193}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1191676}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1100113}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': -0.1040369}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=-0.05, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': -0.1039351}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=-0.05, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': -0.1143447}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=-0.06, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': -0.1119221}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=-0.06, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.10, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.2, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.20, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.3, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.30, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.4, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.40, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.5, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.50, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.7, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.70, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.8000001, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.80, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.9000001, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.90, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.1, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-0.10, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.2, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-0.20, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.3, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-0.30, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.4, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-0.40, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-0.50, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.6, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-0.60, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.7, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-0.70, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.8000001, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-0.80, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.9000001, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-0.90, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.1251137}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.06, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.2017215}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.10, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.228351}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.11, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.2614352}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.13, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.31681}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.16, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.3766834}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.19, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.4322907}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.22, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.4986647}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.25, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.5729142}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.29, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.6495927}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.32, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.7454383}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.37, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8423077}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.42, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.921648}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9941763}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9939194}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.978285}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.49, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9688976}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.48, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.959714}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.48, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9549925}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.48, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9435897}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.47, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.932511}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.47, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.927384}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9218697}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9168236}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9181194}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9196396}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9204893}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9202993}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9225867}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9281369}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9339789}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.47, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9368361}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.47, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9301752}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.47, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.9104441}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8875839}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.44, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8648516}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8520527}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8379872}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.42, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8296565}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8280045}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8298903}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.828523}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8263054}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8231808}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8202935}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8172227}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8154608}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.819294}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.41, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.8510987}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.43, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -0.909941}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.45, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 1, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=1.00, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 0.9000001, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.90, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 0.8000001, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.80, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 0.7, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.70, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 0.6, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 0.5, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.50, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 0.4, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.40, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 0.3, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.30, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1, 'ly': 0.2, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.20, y=-1.00, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.9000001, 'ly': 0.2, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.20, y=-0.90, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.9000001, 'ly': 0.1, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.10, y=-0.90, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.8000001, 'ly': 0.1, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.10, y=-0.80, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.8000001, 'ly': 1.490116e-08, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.80, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.7, 'ly': 1.490116e-08, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.70, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.6, 'ly': 1.490116e-08, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.60, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -1}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.50, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.92355}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.46, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.7768406}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.39, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.7330647}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.37, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.7245115}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.36, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.7169617}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.36, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.6793445}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.34, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.5886464}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.29, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.4881325}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.24, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.3849182}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.19, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.2877876}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.14, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.2329591}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.12, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.2115793}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.11, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.2339031}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.12, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.2494637}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.12, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.2424938}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.12, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.207678}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.10, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': -0.1462374}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=-0.07, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 1.490116e-08, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.50, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.4, 'ly': 1.490116e-08, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.40, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.3, 'ly': 1.490116e-08, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.30, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.2, 'ly': 1.490116e-08, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.20, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.1, 'ly': 1.490116e-08, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.10, z=0.00, yaw=0.00
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 1.490116e-08, 'ly': 1.490116e-08, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] Node type: <class 'node_wrapper.node_wrapper.NodeWrapper'> has publish_from_unity: <bound method NodeWrapper.publish_from_unity of <node_wrapper.node_wrapper.NodeWrapper object at 0x7ff97a8bd1c0>>
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=-0.00, z=0.00, yaw=0.00
+[DroneInstance 0] Shutting down DroneInstance...

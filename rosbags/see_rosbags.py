@@ -10,7 +10,7 @@ import matplotlib
 matplotlib.use("Qt5Agg")
 
 # ---- CONFIG ----
-bag_path = "flight_20251013_190729.bag"
+bag_path = "flight_20251015_162020.bag"
 pose_topic = "/mavros/local_position/pose"
 vel_topic = "/mavros/local_position/velocity_local"
 waypoints_file = "last_mission.json"   # small file created by your sender

@@ -1,17 +1,10 @@
 #!/usr/bin/env python3
-
-import sys
-import os
-import rospy
-import argparse
-
-# Allow Python to find the package-level modules
-current_dir = os.path.dirname(os.path.abspath(__file__))        # .../ros1_server/scripts
-package_root = os.path.abspath(os.path.join(current_dir, '..')) # .../ros1_server
+age_root = os.path.abspath(os.path.join(current_dir, '..')) # .../ros1_server
 sys.path.insert(0, package_root)
 
 from core.app_runner import AppRunner
 from core.logger import init_logger
+from core.system_monitor import SystemMonitor
 
 def main():
     # CLI args
@@ -30,6 +23,16 @@ def main():
     logger.info("[Main] Logger initialized")
     logger.info("[Main] Debug mode enabled" if args.debug else "[Main] Running in normal mode")
     logger.warning("[Main] UNSAFE MODE ENABLED — safety checks will be bypassed!") if args.unsafe else logger.info("[Main] Safe mode active")
+
+    # --- System Monitor Start ---
+    sysmon_log = os.path.join(
+        "/home/migasdrone/ros1_ws/src/ros1_server/logs",
+        f"sysmon_{datetime.datetime.now():%Y%m%d_%H%M%S}.jsonl"
+    )
+    sysmon = SystemMonitor(logger, log_file=sysmon_log)
+    sysmon.start()
+    logger.info(f"[Main] SystemMonitor started → logging to {sysmon_log}")
+    # --- End System Monitor ---
 
     # App startup
     app = AppRunner(logger, unsafe=args.unsafe)
@@ -50,7 +53,17 @@ def main():
         logger.info("[Main] Caught shutdown signal.")
 
     app.shutdown()
+    sysmon.stop()
+    logger.info("[Main] SystemMonitor stopped")
 
+import sys
+import os
+import rospy
+import argparse
+
+# Allow Python to find the package-level modules
+current_dir = os.path.dirname(os.path.abspath(__file__))        # .../ros1_server/scripts
+pack
 
 if __name__ == "__main__":
     main()

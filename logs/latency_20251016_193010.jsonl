@@ -1,0 +1,13 @@
+{"timestamp": 1760639450.3212397, "command": "vel", "latency_ms": 1494.09}
+{"timestamp": 1760639454.327118, "command": "vel", "latency_ms": 61.94}
+{"timestamp": 1760639455.3289766, "command": "vel", "latency_ms": 555.11}
+{"timestamp": 1760639457.3319561, "command": "vel", "latency_ms": 444.32}
+{"timestamp": 1760639458.3334436, "command": "vel", "latency_ms": 15.87}
+{"timestamp": 1760639459.334997, "command": "vel", "latency_ms": 193.05}
+{"timestamp": 1760639461.3378072, "command": "vel", "latency_ms": 313.4}
+{"timestamp": 1760639462.3392622, "command": "vel", "latency_ms": 282.49}
+{"timestamp": 1760639463.3407898, "command": "vel", "latency_ms": 273.41}
+{"timestamp": 1760639476.3537457, "command": "vel", "latency_ms": 743.64}
+{"timestamp": 1760639478.3565056, "command": "vel", "latency_ms": 500.47}
+{"timestamp": 1760639511.3975546, "command": "pos", "latency_ms": 1070.54}
+{"timestamp": 1760639517.4053116, "command": "pos", "latency_ms": 78.1}

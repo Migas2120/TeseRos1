@@ -12,7 +12,7 @@ from scipy.spatial import ConvexHull  # <-- NEW
 import trimesh
 
 # ---- CONFIG ----
-bag_path = "flight_20251013_212657.bag"
+bag_path = "flight_20251015_162020.bag"
 pose_topic = "/mavros/local_position/pose"
 vel_topic = "/mavros/local_position/velocity_local"
 waypoints_file = "last_mission.json"
@@ -64,13 +64,6 @@ for _, msg, t in vel_msgs:
 vel_values = np.array(vel_values)
 vel_times = np.array(vel_times)
 vel_interp = np.interp(times, vel_times, vel_values, left=vel_values[0], right=vel_values[-1])
-
-# ---- FIND ABORT POINT ----
-manual_control = np.array([15.36556, 7.984042, 4.998137])
-# Find the closest index in the recorded path
-distances_to_abort = np.linalg.norm(poses - manual_control, axis=1)
-abort_idx = np.argmin(distances_to_abort)
-print(f"[INFO] Abort detected near index {abort_idx}, position {poses[abort_idx]}")
 
 # ---- BUILD CONVEX HULL (if "points" exist anywhere, even inside missions) ----
 hull_vertices = None
@@ -173,10 +166,10 @@ if mission_data and "missions" in mission_data:
         ))
 # ---- VELOCITY COLORED SEGMENT ----
 fig.add_trace(go.Scatter3d(
-    x=poses[:abort_idx, 0], y=poses[:abort_idx, 1], z=poses[:abort_idx, 2],
+    x=poses[:, 0], y=poses[:, 1], z=poses[:, 2],
     mode='lines',
     line=dict(
-        color=vel_interp[:abort_idx],
+        color=vel_interp[:],
         colorscale='Viridis',
         width=4,
         colorbar=dict(
@@ -189,25 +182,6 @@ fig.add_trace(go.Scatter3d(
         cmax=np.max(vel_interp)
     ),
     name='Velocity Profile'
-))
-
-# ---- MANUAL CONTROL (orange line after abort) ----
-fig.add_trace(go.Scatter3d(
-    x=poses[abort_idx:, 0], y=poses[abort_idx:, 1], z=poses[abort_idx:, 2],
-    mode='lines',
-    line=dict(color='orange', width=5),
-    name='Manual Control'
-))
-
-# --- HIGHLIGHT ABORT POINT ---
-abort_point = np.array([13.91661, 7.956944, 4.982889])  # From your observation
-fig.add_trace(go.Scatter3d(
-    x=[abort_point[0]], y=[abort_point[1]], z=[abort_point[2]],
-    mode='markers+text',
-    marker=dict(size=5, color='red', symbol='circle'),
-    textposition="top center",
-    name="Abort Point",
-    showlegend=True
 ))
 
 # --- Animated frames (drone moving) ---

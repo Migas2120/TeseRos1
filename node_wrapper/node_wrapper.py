@@ -44,11 +44,18 @@ class NodeWrapper:
 
     def publish_to_unity(self, message: dict) -> None:
         """
-        Stub method to satisfy calls from Unity.
-        Accepts a dict payload but performs no action.
+        Sends a JSON message back to Unity through the linked TCP client.
         """
-        # no-op
-        return
+        if not hasattr(self, "tcp_client") or self.tcp_client is None:
+            self._log("warn", "No TCP client linked; dropping telemetry.")
+            return
+        try:
+            payload = json.dumps(message)
+            self.tcp_client.send(payload)
+            self._log("debug", f"[Unity ← NodeWrapper] {payload}")
+        except Exception as e:
+            self._log("error", f"Failed to send telemetry to Unity: {e}")
+
     
     def _log(self, level: str, msg: str):
         tag = f"[NodeWrapper {self.drone_id}]"

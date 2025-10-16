@@ -31,6 +31,7 @@ class AppRunner:
         self.client: TCPClient | None = None
 
         self.drone = DroneInstance(domain_id=0, logger=self.logger, on_landing=self.shutdown, unsafe=self.unsafe)
+        
         self._log("info", "AppRunner initialized with 1 DroneInstance (ID 0)")
 
     def start(self):
@@ -89,6 +90,8 @@ class AppRunner:
         )
         self.client.start()
 
+        self.drone.node.set_tcp_client(self.client)
+
     def handle_unity_disconnect(self):
         self._log("warn", "Unity link lost → preserving active mission, clearing the rest, then queuing RTL→LAND")
         # 1) clear out any future missions
@@ -111,6 +114,8 @@ class AppRunner:
         self.drone.shutdown()
         if self.client:
             self.client.stop()  
+        
+        exit(0)
 
     def _log(self, level: str, msg: str):
         tag = "[AppRunner]"

@@ -1,0 +1,473 @@
+[DroneInstance 0] Initializing DroneInstance with domain ID 0 [SAFE mode]
+[DroneInstance 0] Battery percentage unavailable.
+[DroneInstance 0] LatencyProbe | Received start_manual id=737b499d-f5d7-449b-9cd3-7badd7c49fd4 at 34824.472534
+[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'start_manual'}
+[DroneInstance 0] Entered MANUAL mode
+[DroneInstance 0] LatencyProbe | Received takeoff id=db8e8cdd-9c57-4089-984f-cb938acddf3e at 34824.555939
+[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'takeoff', 'altitude': 3, 'id': 0}
+[DroneInstance 0] LatencyProbe | Sent takeoff id=None at 34824.556458
+[DroneInstance 0] LatencyProbe | Received N/A id=49f1b0de-0f1c-464e-b7b7-ab3b97e3af48 at 34836.546465
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.1436725}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34836.546864
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=a5bd58f5-130e-482c-b187-6fca54bcfa4a at 34836.634012
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.2266492}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34836.634315
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.11, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=6e44c44a-dab9-44f9-aec4-7ce414449894 at 34836.635111
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.3292046}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34836.635407
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.16, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=1b8d7ab2-5d54-4edb-9359-07971d36b12e at 34836.636082
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.4440837}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34836.636359
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.22, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=88d7331e-2c06-4991-b606-9696436d55e4 at 34836.637003
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.5443169}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34836.637322
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.27, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=d0017d54-1277-42c0-9588-4f7e10e593dd at 34836.638030
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.6523457}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34836.638230
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.33, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=4bb99535-116c-47af-b689-ed9a85ea1b71 at 34836.638896
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.764613}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34836.639147
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.38, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=64462c88-d119-4907-9b14-d577765d8512 at 34836.885990
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0.8784543}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34836.886311
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.44, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=3f491d82-ce52-42e7-8a5b-516e2a55ddaa at 34836.886905
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 1}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34836.887243
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.50, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=5434fe02-9d12-4e25-9090-8806051e4e05 at 34841.811537
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.1, 'rx': 0, 'ry': 1}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34841.811921
+[DroneInstance 0] Manual VEL cmd: x=0.10, y=0.00, z=0.50, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=2653d931-bd03-4084-8a31-3135a4e14600 at 34842.324728
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.2, 'rx': 0, 'ry': 1}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34842.325105
+[DroneInstance 0] Manual VEL cmd: x=0.20, y=0.00, z=0.50, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=281c3883-48a4-492a-bdcb-f3586f039ff7 at 34842.833609
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.3, 'rx': 0, 'ry': 1}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34842.833936
+[DroneInstance 0] Manual VEL cmd: x=0.30, y=0.00, z=0.50, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=a671bba3-eb1c-427b-ab09-701113989f75 at 34844.437219
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.4, 'rx': 0, 'ry': 1}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34844.437553
+[DroneInstance 0] Manual VEL cmd: x=0.40, y=0.00, z=0.50, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=dffb297e-50de-4a5f-9a82-21411d2b2492 at 34844.947344
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.5, 'rx': 0, 'ry': 1}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34844.947748
+[DroneInstance 0] Manual VEL cmd: x=0.50, y=0.00, z=0.50, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=6cde435b-a8e9-4eb4-b8a3-b41eb0d70c67 at 34845.450831
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 1}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34845.451126
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.50, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=93caeb37-0f95-435f-9e14-49ce971fb901 at 34846.101268
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.7837646}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.101706
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.39, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=6f83cb1b-ad9c-425b-895a-9c1174c5e080 at 34846.151423
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.7297894}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.151711
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.36, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=930e9398-67af-48eb-993e-186bc781b68c at 34846.152346
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.6912028}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.152561
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.35, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=66f8bc32-ff7c-472f-9a16-0b47f4846ba2 at 34846.153176
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.6516365}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.153468
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.33, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=96f5337f-a3ce-42d5-ac14-daf1df96c32a at 34846.196475
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.6107955}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.196774
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.31, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=af89ec33-3d40-4993-84e9-26c9680a3fa6 at 34846.197247
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.5764159}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.197515
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.29, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=0d662fdc-a28f-4dbc-a0c4-a109d377ae89 at 34846.198049
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.5437557}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.198253
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.27, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=aacd0288-da8c-4d85-88f3-48d330fd9ccc at 34846.198693
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.5073993}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.198873
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.25, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=7ac9d745-cdc9-439a-b5a0-b209a8dce2d9 at 34846.241166
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.4744323}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.241488
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.24, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=176ade18-a34b-4247-8d12-38b5cbe13edf at 34846.241981
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.4449049}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.242169
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.22, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=6d1813e5-159f-4dd4-95c8-3384d0681f22 at 34846.242632
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.414515}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.242814
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.21, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=757ab7cd-0e3c-45c2-a183-e2c6ecc9c71f at 34846.286163
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.3910495}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.286461
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.20, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=9c413f1a-3cc6-4844-9e15-d08635c68afc at 34846.286983
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.3696629}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.287176
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.18, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=6a6369fe-b4f3-40a4-873d-f2c8bdce886b at 34846.287656
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.3537061}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.287849
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.18, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=3fa809b7-af03-4784-819c-1887fe51b3ce at 34846.334218
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.3383318}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.334547
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.17, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=93793f98-3a26-47f4-9f40-09854bc0e116 at 34846.335017
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.3303185}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.335199
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.17, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=c150ef4d-b5ec-433d-8cad-12491f37460b at 34846.335639
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.3184083}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.335822
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.16, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=b52c0b9d-98e5-4ea6-936e-63564198d8ff at 34846.376037
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.3072701}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.376375
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.15, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=e7dcc718-b816-4641-87c5-081ee2d59644 at 34846.376851
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2937406}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.377052
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.15, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=19cbaccb-ae0a-4d65-afdf-06fbd11ead5b at 34846.377472
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2841598}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.377687
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.14, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=a9d990ad-a324-45a5-b171-532fa0acaf30 at 34846.420952
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2850221}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.421251
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.14, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=75e05b94-8eb8-406d-a23e-05af4f1728d4 at 34846.421746
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2804025}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.421933
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.14, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=09329cc3-014f-42b6-aead-5463d747d1ae at 34846.422375
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2768555}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.422555
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.14, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=91d1cb2d-da4b-4546-8bf2-2c2104719e57 at 34846.422979
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2646019}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.423155
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.13, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=29dbbf7a-3f8c-4db6-a8b0-0439119758aa at 34846.466099
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2384514}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.466412
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=c379f7ea-8bf0-4bea-a9fc-092b076b274e at 34846.466862
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2205369}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.467056
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.11, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=8f15f473-9eab-4010-8bbf-b74919940ddc at 34846.467517
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1944515}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.467692
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.10, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=d90c5800-5a80-4854-8dbe-0543d6480362 at 34846.511054
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1717135}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.511358
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.09, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=18422cbb-5546-4cb5-ac3b-c60734efc6a0 at 34846.511826
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1519282}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.512018
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.08, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=c4297202-0b70-4d14-b770-a1e88ea2d0e3 at 34846.512471
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1394836}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.512650
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=06a932d3-3465-4a59-8d50-833907f9a7a7 at 34846.556058
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1312174}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.556357
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=c400fd33-fb33-4c49-affe-40487fca207a at 34846.556830
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1205883}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.557078
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=2dc196b0-dde0-4d08-9f94-e09fbb490ab1 at 34846.557757
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1075357}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.558026
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.05, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=2093467c-ef51-4bcf-979a-0bbbde04da65 at 34846.601143
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.601449
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=6239634c-1513-4323-b83c-a19b30683a0f at 34846.646173
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1063533}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.646488
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.05, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=72e1a000-689b-4cdb-b76d-a492cc37ecb4 at 34846.646997
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.114357}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.647178
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=0eefbaf4-2b93-4ca8-abca-a36d28bd2d87 at 34846.691170
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.119261}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.691560
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=c3bbaa9b-e989-49b0-a395-1fc6df23f1ed at 34846.692306
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1224371}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.692615
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=a91dca71-0f84-4d78-81ae-da34a051b468 at 34846.693280
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1246467}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.693537
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=84cc67bd-1f05-4f85-9eca-938251c9f21f at 34846.736180
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1275722}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.736485
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.06, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=a540de89-640a-4b66-bf07-2ce4598d0f87 at 34846.737394
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1328456}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.737607
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=cb00e6db-8c7a-48f5-a9a3-19f3433c9eb5 at 34846.738138
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1389861}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.738406
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=0c3fc55e-6b5f-4484-9053-e1c571f2efa2 at 34846.781137
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1434499}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.781494
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=30de2e2f-3c07-4047-896d-059ef0fcf499 at 34846.782074
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1447401}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.782347
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=1aa96620-b7c1-493d-88d3-32c2cababd1c at 34846.782888
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1430979}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.783215
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=a48529c6-8000-4875-a108-efe31c01dd15 at 34846.783770
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1414231}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.783970
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=1fe04a89-dc7c-4b82-b02d-b99281c29267 at 34846.826199
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1405337}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.826526
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=981192da-33e9-403e-a6db-7aaaf673014c at 34846.827009
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.143585}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.827197
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=286c3c28-ff7f-4282-96b2-0ffaf1612e05 at 34846.827644
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1482778}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.827823
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=817b1038-5ee7-4a11-9951-c34161aae921 at 34846.871009
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1552221}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.871328
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.08, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=f9c63ac8-75ac-4464-b150-5e416fd88fb4 at 34846.871809
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1604669}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.871996
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.08, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=819671fa-e2d2-44c8-abe9-5c0e629ad355 at 34846.872464
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1695058}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.872646
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.08, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=ac810e6e-7bce-4005-84e2-4930f3fa208b at 34846.916740
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1765444}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.917030
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.09, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=45bf08a5-1d8e-4da2-b069-8e912219b621 at 34846.917627
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1830964}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.917867
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.09, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=38ac0f09-5184-41d1-81a4-6483358d763f at 34846.918321
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1874204}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.918508
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.09, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=27f9181e-1393-4026-8b9b-9365bae3d95c at 34846.961414
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.1922396}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.961719
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.10, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=73cf85f5-5549-4b8a-9b54-f15164965445 at 34846.962221
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2019664}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.962416
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.10, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=ccc126b6-42a3-4ecf-b372-47ffeadcddaf at 34846.962832
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2177707}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.963010
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.11, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=33dd50f9-c323-44d5-8ef4-4b3b3a523500 at 34846.963415
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2338063}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34846.963590
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=f51db5bb-7cba-49c5-abba-d7b534dc1060 at 34847.006202
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.241689}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.006506
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=66199f40-208d-4db3-8900-8e1a8826a775 at 34847.006996
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2457472}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.007168
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=effcae10-8cb1-414b-b960-7a97c7b8a6a3 at 34847.007660
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2450999}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.007868
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=79915060-b85b-4a32-a99a-f70bc10d30a8 at 34847.051030
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2464302}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.051329
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=cf904422-4e4a-4104-8297-53de89b0ea3b at 34847.051834
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2469834}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.052026
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=14ffc845-0558-4655-8df7-37853cd2e9da at 34847.052554
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2472545}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.052747
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=2e2fcdfb-2087-49c0-974d-5b7f64219dee at 34847.102090
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2496482}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.102438
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=e139f581-c161-4778-a934-ca94da79fd11 at 34847.102907
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2522732}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.103094
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.13, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=f75bfa78-eff6-48ac-a7b5-e3079e880c4d at 34847.103553
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2541821}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.103775
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.13, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=2f172db4-443c-4811-9996-39c66dd9918c at 34847.158946
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.253119}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.159263
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.13, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=47b87262-1a1f-40d5-b804-048007b39049 at 34847.159816
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2488815}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.160020
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=a5784b71-5c10-4192-a40d-434c6983a063 at 34847.160472
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2439117}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.160655
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=49c47e35-f5de-4130-899c-8b6c3e32217c at 34847.161099
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2423604}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.161285
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=8a1af1f8-78fa-47cf-8d19-33c561dd0d47 at 34847.161733
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2403239}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.161910
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=af384c58-a5c5-4e03-888d-f6541f0b710a at 34847.201108
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2385386}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.201424
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=22d08d32-b38c-4409-89eb-2bb2eb8ac235 at 34847.201872
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0.6, 'rx': 0, 'ry': 0.2381603}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34847.202054
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=0.00, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=9d79842c-4243-4f86-b9e1-1b39c3c7cecb at 34849.084204
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.1, 'ly': 0.6, 'rx': 0, 'ry': 0.2381603}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34849.084514
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.10, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=7a80c97d-95db-431c-8a15-0d4d15cb8f2a at 34849.588197
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.2, 'ly': 0.6, 'rx': 0, 'ry': 0.2381603}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34849.588506
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.20, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=628f220d-b5ee-4da9-9050-a1f913a2b9ad at 34850.116574
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.3, 'ly': 0.6, 'rx': 0, 'ry': 0.2381603}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34850.116868
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.30, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=8963a218-f8d8-4684-b2aa-e2db5619ed36 at 34850.623656
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.4, 'ly': 0.6, 'rx': 0, 'ry': 0.2381603}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34850.623957
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.40, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=082a4190-1338-48ba-a08f-c3aacc6aed93 at 34851.126936
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.2381603}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34851.127495
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.12, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=64c8207f-4a21-4759-befa-38bd9c7f4797 at 34863.512244
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.1311216}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.512593
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=65bd6672-b973-4d8b-9ce0-2bebb39ee9df at 34863.615918
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.132481}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.616214
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=ac754c95-77dc-4556-a026-2a8255db3a24 at 34863.616724
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.1340704}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.616922
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=f03cf818-f0fb-46b9-bf26-d470eb8139df at 34863.617369
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.133774}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.617564
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=34a99c36-d20e-4379-8b52-30dc20c62918 at 34863.618107
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.1319045}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.618316
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.07, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=38a91daa-1e5f-4438-815b-b93f4fe45347 at 34863.618853
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.1289191}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.619038
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.06, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=5d694b10-41bb-46f8-bd43-e8d3c5edd0f9 at 34863.667424
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.1240544}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.667737
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.06, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=70cffe90-1459-41d2-9860-61cd67e5f9a5 at 34863.668222
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.1158291}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.668408
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.06, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=dbfd2c4a-780d-4ed3-a764-bb2e516323c3 at 34863.668837
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.1105157}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.669013
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.06, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=6db64b69-a23a-4c2a-9392-4eb9ab0d11cd at 34863.669440
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0.1021521}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.669624
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.05, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=2dc7aa4e-0373-4573-ac5a-bca9214a87eb at 34863.670051
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0.5, 'ly': 0.6, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34863.670221
+[DroneInstance 0] Manual VEL cmd: x=0.60, y=-0.50, z=0.00, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=1f85789f-1241-4fcd-8e2d-719183ae1138 at 34865.915828
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34865.916155
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received N/A id=b34309d3-fc53-4084-b343-bb8f8202a0ee at 34869.372507
+[DroneInstance 0] Received message from Unity: {'type': 'manual_control', 'axes': {'lx': 0, 'ly': 0, 'rx': 0, 'ry': 0}}
+[DroneInstance 0] LatencyProbe | Sent vel command at 34869.372828
+[DroneInstance 0] Manual VEL cmd: x=0.00, y=0.00, z=0.00, yaw=0.00
+[DroneInstance 0] LatencyProbe | Received stop_manual id=e36b8db3-97b2-49a3-8433-48cbf065fb1b at 34873.122170
+[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'stop_manual'}
+[DroneInstance 0] Exited MANUAL mode
+[DroneInstance 0] Stopped velocity streaming (manual mode off).
+[DroneInstance 0] LatencyProbe | Received stop_manual id=d1003767-b531-447b-9e82-d508656286d4 at 34873.799678
+[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'stop_manual'}
+[DroneInstance 0] Exited MANUAL mode
+[DroneInstance 0] Stopped velocity streaming (manual mode off).
+[DroneInstance 0] LatencyProbe | Received N/A id=77b80c39-fd85-4606-84ee-7bf08c7ffb15 at 34896.878186
+[DroneInstance 0] Received message from Unity: {'type': 'add_mission', 'mission_id': 'Mission_3010', 'waypoints': [{'coords': [-3.321934223175049, 4.707390785217285, 3.8111791610717773], 'hold': 0.0}, {'coords': [2.9996767044067383, 3.619464635848999, 2.9062182903289795], 'hold': 0.0}], 'mode': 'once', 'patrol_loops': 1, 'priority': 1, 'preempt': False}
+[DroneInstance 0] Mission 'Mission_3010' added with priority 1 and 2 waypoints.
+[DroneInstance 0] Starting mission: Mission_3010
+[DroneInstance 0] Distance to waypoint: 21.86 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 34898.387128
+[DroneInstance 0] Distance to waypoint: 21.37 meters
+[DroneInstance 0] Distance to waypoint: 18.46 meters
+[DroneInstance 0] Distance to waypoint: 13.18 meters
+[DroneInstance 0] Distance to waypoint: 7.65 meters
+[DroneInstance 0] Distance to waypoint: 3.26 meters
+[DroneInstance 0] Still approaching target... 3.26m remaining
+[DroneInstance 0] Distance to waypoint: 0.49 meters
+[DroneInstance 0] _complete_current_waypoint: idx=0, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #1 to #2
+[DroneInstance 0] Distance to waypoint: 6.93 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 34905.387160
+[DroneInstance 0] Distance to waypoint: 6.44 meters
+[DroneInstance 0] Distance to waypoint: 3.76 meters
+[DroneInstance 0] Distance to waypoint: 1.19 meters
+[DroneInstance 0] Distance to waypoint: 0.04 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #2 to #3
+[DroneInstance 0] Mission 'Mission_3010' complete.
+[DroneInstance 0] Shutting down DroneInstance...

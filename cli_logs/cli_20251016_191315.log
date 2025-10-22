@@ -1,9 +1,0 @@
-[DroneInstance 0] Initializing DroneInstance with domain ID 0 [SAFE mode]
-[DroneInstance 0] Battery percentage unavailable.
-[DroneInstance 0] LatencyProbe | Received start_manual id=8f26779a-451f-49b4-90f1-35e62652eefd at 33814.619720
-[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'start_manual'}
-[DroneInstance 0] Entered MANUAL mode
-[DroneInstance 0] LatencyProbe | Received takeoff id=a1c8fd11-0419-43f4-a7fc-709123b27697 at 33814.751771
-[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'takeoff', 'altitude': 3, 'id': 0}
-[DroneInstance 0] LatencyProbe | Sent takeoff id=None at 33814.752097
-[DroneInstance 0] Shutting down DroneInstance...

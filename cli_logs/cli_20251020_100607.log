@@ -1,0 +1,152 @@
+[DroneInstance 0] Initializing DroneInstance with domain ID 0 [SAFE mode]
+[DroneInstance 0] LatencyProbe | Received N/A id=9f01afe5-4b6d-4414-9612-1bf9ece35b14 at 1329.397194
+[DroneInstance 0] Received message from Unity: {'type': 'add_mission', 'mission_id': 'Mission_6570', 'waypoints': [{'coords': [1.8563141822814941, -0.653355598449707, 0.15745759010314941], 'hold': 0.0}, {'coords': [0.3031175136566162, -0.8636990785598755, 0.1713958978652954], 'hold': 0.0}, {'coords': [0.7752119302749634, 0.4933492839336395, 0.16493988037109375], 'hold': 0.0}, {'coords': [1.3551019430160522, -0.10987162590026855, 0.01765263080596924], 'hold': 0.0}], 'mode': 'once', 'patrol_loops': 1, 'priority': 1, 'preempt': False}
+[DroneInstance 0] Mission 'Mission_6570' added with priority 1 and 4 waypoints.
+[DroneInstance 0] Resetting takeoff flags (drone on ground).
+[DroneInstance 0] Starting mission: Mission_6570
+[DroneInstance 0] Drone not armed. Sending arm command.
+[DroneInstance 0] Switching to GUIDED mode.
+[DroneInstance 0] Initiating takeoff to 2.0m.
+[DroneInstance 0] Waiting to reach takeoff altitude: z=-0.01
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.12
+[DroneInstance 0] Waiting to reach takeoff altitude: z=1.21
+[DroneInstance 0] Reached takeoff altitude. Starting mission.
+[DroneInstance 0] Distance to waypoint: 2.66 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 1336.567613
+[DroneInstance 0] Distance to waypoint: 2.34 meters
+[DroneInstance 0] Distance to waypoint: 0.88 meters
+[DroneInstance 0] Distance to waypoint: 0.02 meters
+[DroneInstance 0] _complete_current_waypoint: idx=0, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #1 to #2
+[DroneInstance 0] Distance to waypoint: 1.61 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 1340.568281
+[DroneInstance 0] Distance to waypoint: 1.20 meters
+[DroneInstance 0] Distance to waypoint: 0.31 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #2 to #3
+[DroneInstance 0] Distance to waypoint: 1.45 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 1343.568312
+[DroneInstance 0] Distance to waypoint: 1.06 meters
+[DroneInstance 0] Distance to waypoint: 0.23 meters
+[DroneInstance 0] _complete_current_waypoint: idx=2, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #3 to #4
+[DroneInstance 0] Distance to waypoint: 0.89 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 1346.568429
+[DroneInstance 0] Distance to waypoint: 0.61 meters
+[DroneInstance 0] Distance to waypoint: 0.15 meters
+[DroneInstance 0] _complete_current_waypoint: idx=3, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #4 to #5
+[DroneInstance 0] Mission 'Mission_6570' complete.
+[DroneInstance 0] LatencyProbe | Received N/A id=bc5453d3-72a5-4d3d-905e-1242f25303f6 at 1539.669363
+[DroneInstance 0] Received message from Unity: {'type': 'map_area', 'mission_id': 'Mission_7859', 'points': [{'x': -1.8337825536727905, 'y': -1.449164628982544, 'z': 1.665964961051941}, {'x': -0.8337826132774353, 'y': -1.449164628982544, 'z': 1.657899260520935}, {'x': -0.8337826132774353, 'y': -0.4491650462150574, 'z': 1.657899260520935}, {'x': -1.8337825536727905, 'y': -0.4491650462150574, 'z': 1.657899260520935}, {'x': -1.8337825536727905, 'y': -1.449164628982544, 'z': 2.6469686031341553}, {'x': -0.8337826132774353, 'y': -1.449164628982544, 'z': 2.6469686031341553}, {'x': -0.8337826132774353, 'y': -0.4491650462150574, 'z': 2.6469686031341553}, {'x': -1.8337825536727905, 'y': -0.4491650462150574, 'z': 2.6469686031341553}], 'grid_spacing': 0.1690308153629303, 'vertical_step': 0.32968977093696594, 'priority': 1, 'preempt': False}
+[DroneInstance 0] Mission 'Mission_7859' added with priority 1 and 90 waypoints.
+[DroneInstance 0] Resetting takeoff flags (drone on ground).
+[DroneInstance 0] {'type': 'add_mission', 'mission_id': 'Mission_7859', 'waypoints': [(-0.988628476858139, -1.2801338136196136, 1.657899260520935), (-1.1576592922210693, -1.1111029982566833, 1.657899260520935), (-0.988628476858139, -1.1111029982566833, 1.657899260520935), (-0.988628476858139, -0.942072182893753, 1.657899260520935), (-1.1576592922210693, -0.942072182893753, 1.657899260520935), (-1.3266901075839996, -0.942072182893753, 1.657899260520935), (-1.49572092294693, -0.7730413675308228, 1.657899260520935), (-1.3266901075839996, -0.7730413675308228, 1.657899260520935), (-1.1576592922210693, -0.7730413675308228, 1.657899260520935), (-0.988628476858139, -0.7730413675308228, 1.657899260520935), (-0.988628476858139, -0.6040105521678925, 1.657899260520935), (-1.1576592922210693, -0.6040105521678925, 1.657899260520935), (-1.3266901075839996, -0.6040105521678925, 1.657899260520935), (-1.49572092294693, -0.6040105521678925, 1.657899260520935), (-1.6647517383098602, -0.6040105521678925, 1.657899260520935), (-0.988628476858139, -1.2801338136196136, 1.987589031457901), (-1.1576592922210693, -1.2801338136196136, 1.987589031457901), (-1.3266901075839996, -1.2801338136196136, 1.987589031457901), (-1.49572092294693, -1.2801338136196136, 1.987589031457901), (-1.6647517383098602, -1.2801338136196136, 1.987589031457901), (-1.6647517383098602, -1.1111029982566833, 1.987589031457901), (-1.49572092294693, -1.1111029982566833, 1.987589031457901), (-1.3266901075839996, -1.1111029982566833, 1.987589031457901), (-1.1576592922210693, -1.1111029982566833, 1.987589031457901), (-0.988628476858139, -1.1111029982566833, 1.987589031457901), (-0.988628476858139, -0.942072182893753, 1.987589031457901), (-1.1576592922210693, -0.942072182893753, 1.987589031457901), (-1.3266901075839996, -0.942072182893753, 1.987589031457901), (-1.49572092294693, -0.942072182893753, 1.987589031457901), (-1.6647517383098602, -0.942072182893753, 1.987589031457901), (-1.6647517383098602, -0.7730413675308228, 1.987589031457901), (-1.49572092294693, -0.7730413675308228, 1.987589031457901), (-1.3266901075839996, -0.7730413675308228, 1.987589031457901), (-1.1576592922210693, -0.7730413675308228, 1.987589031457901), (-0.988628476858139, -0.7730413675308228, 1.987589031457901), (-0.988628476858139, -0.6040105521678925, 1.987589031457901), (-1.1576592922210693, -0.6040105521678925, 1.987589031457901), (-1.3266901075839996, -0.6040105521678925, 1.987589031457901), (-1.49572092294693, -0.6040105521678925, 1.987589031457901), (-1.6647517383098602, -0.6040105521678925, 1.987589031457901), (-0.988628476858139, -1.2801338136196136, 2.317278802394867), (-1.1576592922210693, -1.2801338136196136, 2.317278802394867), (-1.3266901075839996, -1.2801338136196136, 2.317278802394867), (-1.49572092294693, -1.2801338136196136, 2.317278802394867), (-1.6647517383098602, -1.2801338136196136, 2.317278802394867), (-1.6647517383098602, -1.1111029982566833, 2.317278802394867), (-1.49572092294693, -1.1111029982566833, 2.317278802394867), (-1.3266901075839996, -1.1111029982566833, 2.317278802394867), (-1.1576592922210693, -1.1111029982566833, 2.317278802394867), (-0.988628476858139, -1.1111029982566833, 2.317278802394867), (-0.988628476858139, -0.942072182893753, 2.317278802394867), (-1.1576592922210693, -0.942072182893753, 2.317278802394867), (-1.3266901075839996, -0.942072182893753, 2.317278802394867), (-1.49572092294693, -0.942072182893753, 2.317278802394867), (-1.6647517383098602, -0.942072182893753, 2.317278802394867), (-1.6647517383098602, -0.7730413675308228, 2.317278802394867), (-1.49572092294693, -0.7730413675308228, 2.317278802394867), (-1.3266901075839996, -0.7730413675308228, 2.317278802394867), (-1.1576592922210693, -0.7730413675308228, 2.317278802394867), (-0.988628476858139, -0.7730413675308228, 2.317278802394867), (-0.988628476858139, -0.6040105521678925, 2.317278802394867), (-1.1576592922210693, -0.6040105521678925, 2.317278802394867), (-1.3266901075839996, -0.6040105521678925, 2.317278802394867), (-1.49572092294693, -0.6040105521678925, 2.317278802394867), (-1.6647517383098602, -0.6040105521678925, 2.317278802394867), (-0.988628476858139, -1.2801338136196136, 2.646968573331833), (-1.1576592922210693, -1.2801338136196136, 2.646968573331833), (-1.3266901075839996, -1.2801338136196136, 2.646968573331833), (-1.49572092294693, -1.2801338136196136, 2.646968573331833), (-1.6647517383098602, -1.2801338136196136, 2.646968573331833), (-1.6647517383098602, -1.1111029982566833, 2.646968573331833), (-1.49572092294693, -1.1111029982566833, 2.646968573331833), (-1.3266901075839996, -1.1111029982566833, 2.646968573331833), (-1.1576592922210693, -1.1111029982566833, 2.646968573331833), (-0.988628476858139, -1.1111029982566833, 2.646968573331833), (-0.988628476858139, -0.942072182893753, 2.646968573331833), (-1.1576592922210693, -0.942072182893753, 2.646968573331833), (-1.3266901075839996, -0.942072182893753, 2.646968573331833), (-1.49572092294693, -0.942072182893753, 2.646968573331833), (-1.6647517383098602, -0.942072182893753, 2.646968573331833), (-1.6647517383098602, -0.7730413675308228, 2.646968573331833), (-1.49572092294693, -0.7730413675308228, 2.646968573331833), (-1.3266901075839996, -0.7730413675308228, 2.646968573331833), (-1.1576592922210693, -0.7730413675308228, 2.646968573331833), (-0.988628476858139, -0.7730413675308228, 2.646968573331833), (-0.988628476858139, -0.6040105521678925, 2.646968573331833), (-1.1576592922210693, -0.6040105521678925, 2.646968573331833), (-1.3266901075839996, -0.6040105521678925, 2.646968573331833), (-1.49572092294693, -0.6040105521678925, 2.646968573331833), (-1.6647517383098602, -0.6040105521678925, 2.646968573331833)], 'mode': 'once', 'patrol_loops': 1, 'priority': 1, 'preempt': False}
+[DroneInstance 0] [3D Slicer] 90 waypoints generated from 3D hull between Z=1.66-2.65 every 0.32968977093696594m.
+[DroneInstance 0] Starting mission: Mission_7859
+[DroneInstance 0] Initiating takeoff to 2.0m.
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] LatencyProbe | Received skip_wp id=bd7fcef3-d1a3-4f17-b987-2d0efd5f3622 at 1598.655890
+[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'skip_wp'}
+[DroneInstance 0] Skip requested — skipping waypoint 1
+[DroneInstance 0] _complete_current_waypoint: idx=0, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #1 to #2
+[DroneInstance 0] LatencyProbe | Received skip_wp id=bbc8ab5c-cc59-4dd6-802f-1ed3296e9c14 at 1599.513022
+[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'skip_wp'}
+[DroneInstance 0] Skip requested — skipping waypoint 2
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #2 to #3
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.02
+[DroneInstance 0] LatencyProbe | Received pause id=6cd8609c-6649-49d5-9c30-97987b6a84d1 at 1627.219392
+[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'pause'}
+[DroneInstance 0] Paused mission 'Mission_7859' at waypoint 0.
+[DroneInstance 0] LatencyProbe | Received N/A id=22daaea9-8324-4f60-99b9-206f0f809594 at 1638.590972
+[DroneInstance 0] Received message from Unity: {'type': 'return_to_base'}
+[DroneInstance 0] Return-to-Base requested — cancelling mission and switching to RTL mode.
+[DroneInstance 0] LatencyProbe | Sent mode=RTL at 1638.591453
+[DroneInstance 0] Return-to-Base mode engaged.
+[DroneInstance 0] Home reached — issuing LAND command
+[DroneInstance 0] Shutting down DroneInstance...

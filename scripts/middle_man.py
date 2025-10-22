@@ -1,10 +1,21 @@
 #!/usr/bin/env python3
-age_root = os.path.abspath(os.path.join(current_dir, '..')) # .../ros1_server
+
+import sys
+import os
+import rospy
+import argparse
+import datetime
+
+# Allow Python to find the package-level modules
+current_dir = os.path.dirname(os.path.abspath(__file__))        # .../ros1_server/scripts
+package_root = os.path.abspath(os.path.join(current_dir, '..')) # .../ros1_server
 sys.path.insert(0, package_root)
 
 from core.app_runner import AppRunner
 from core.logger import init_logger
 from core.system_monitor import SystemMonitor
+
+
 
 def main():
     # CLI args
@@ -55,15 +66,6 @@ def main():
     app.shutdown()
     sysmon.stop()
     logger.info("[Main] SystemMonitor stopped")
-
-import sys
-import os
-import rospy
-import argparse
-
-# Allow Python to find the package-level modules
-current_dir = os.path.dirname(os.path.abspath(__file__))        # .../ros1_server/scripts
-pack
 
 if __name__ == "__main__":
     main()

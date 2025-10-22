@@ -41,7 +41,7 @@ class SystemMonitor:
                 mem_mb = mem_info.rss / (1024 * 1024)  # RSS memory in MB
 
                 # Log to console
-                self.logger.info(f"[SystemMonitor] CPU={cpu:.2f}% | Memory={mem_mb:.2f} MB")
+                self.logger.debug(f"[SystemMonitor] CPU={cpu:.2f}% | Memory={mem_mb:.2f} MB")
 
                 # Log to file if provided
                 if self.log_file:

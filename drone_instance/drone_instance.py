@@ -128,6 +128,7 @@ class DroneInstance:
             ("change_priority", None):      self._handle_change_priority,
             ("return_to_base", None):       lambda d: self._handle_return_to_base(),
             ("manual_control", None):       self._handle_manual_control,
+            ("delete_mission", None):       self._handle_delete_mission,
         }
 
 
@@ -141,6 +142,45 @@ class DroneInstance:
 
     def tick(self):
 
+        # ——————————————————————————————————————————————
+        # TELEMETRY → Unity (always send, even if early return)
+        # ——————————————————————————————————————————————
+        try:
+            pose = self.telemetry_manager.get_latest_pose()
+            telemetry = self.telemetry_manager.get_all_latest_status()
+            battery = telemetry.get("battery", {}) if telemetry else {}
+            status = telemetry.get("status", {}) if telemetry else {}
+
+            packet = {
+                "type": "telemetry_update",
+                "id": self.domain_id,
+                "timestamp": time.time(),
+                "active_mission": (
+                    self.active_mission.mission_id if self.active_mission else None
+                ),
+                "battery": {
+                    "percentage": battery.get("percentage"),
+                    "voltage": battery.get("voltage"),
+                },
+                "position": {
+                    "x": pose["x"] if pose else None,
+                    "y": pose["y"] if pose else None,
+                    "z": pose["z"] if pose else None,
+                },
+                "status": {
+                    "mode": status.get("mode"),
+                    "armed": status.get("armed"),
+                }
+            }
+
+            self.node.publish_to_unity(packet)
+        except Exception as e:
+            self._log("error", f"Telemetry send failed: {e}")
+
+        # ——————————————————————————————————————————————
+        # NORMAL TICK FLOW
+        # ——————————————————————————————————————————————
+        
         if self.landing_in_progress:
             return
 
@@ -177,6 +217,7 @@ class DroneInstance:
         # 5) Handle mission execution
         if self.active_mission:
             self._execute_active_mission()
+
 
 
     def _execute_active_mission(self):
@@ -953,6 +994,8 @@ class DroneInstance:
 
             self._handle_add_mission(mission_payload)
 
+            self._log("debug", f"{mission_payload}")
+
             self._log(
                 "info",
                 f"[3D Slicer] {len(waypoints)} waypoints generated from 3D hull "
@@ -1152,7 +1195,56 @@ class DroneInstance:
             "mission_id": resumed.mission_id,
             "status": "resumed"
         })
-        
+
+    def _handle_delete_mission(self, data: dict):
+        """
+        Deletes a mission by mission_id from active, paused, or queued sets.
+        If it's the currently active mission, it is aborted and cleared.
+        """
+        mission_id = data.get("mission_id")
+        if not mission_id:
+            self._log("warn", "delete_mission called without mission_id.")
+            return
+
+        removed_from = None
+
+        # 1) Check active mission
+        if self.active_mission and self.active_mission.mission_id == mission_id:
+            self._log("info", f"Deleting active mission '{mission_id}'. Aborting mission.")
+            self.active_mission = None
+            removed_from = "active"
+
+        # 2) Check paused stack
+        else:
+            before = len(self.paused_missions)
+            self.paused_missions = [m for m in self.paused_missions if m.mission_id != mission_id]
+            if len(self.paused_missions) < before:
+                self._log("info", f"Deleted mission '{mission_id}' from paused stack.")
+                removed_from = "paused"
+
+        # 3) Check mission queue (heap)
+        if not removed_from:
+            old_queue_len = len(self.mission_queue)
+            new_queue = []
+            for item in self.mission_queue:
+                if item.mission_id != mission_id:
+                    new_queue.append(item)
+            if len(new_queue) < old_queue_len:
+                self.mission_queue = new_queue
+                self._log("info", f"Deleted mission '{mission_id}' from queue.")
+                removed_from = "queue"
+
+        if not removed_from:
+            self._log("warn", f"Mission '{mission_id}' not found in active, paused, or queue.")
+        else:
+            # Notify Unity
+            self.node.publish_to_unity({
+                "type": "mission",
+                "id": self.domain_id,
+                "mission_id": mission_id,
+                "status": "deleted"
+            })
+            
     """
     System wide code
     """

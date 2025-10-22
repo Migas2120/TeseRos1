@@ -1,8 +1,0 @@
-[DroneInstance 0] Initializing DroneInstance with domain ID 0 [SAFE mode]
-[DroneInstance 0] LatencyProbe | Received start_manual id=86ab399a-8b53-4a91-b986-74e0ce8abaf4 at 32254.236808
-[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'start_manual', '_t_received': 32254.2368076, '_id': '86ab399a-8b53-4a91-b986-74e0ce8abaf4'}
-[DroneInstance 0] Entered MANUAL mode
-[DroneInstance 0] LatencyProbe | Received takeoff id=89a1fc01-8452-4e4e-9825-8067bf338cc1 at 32254.442918
-[DroneInstance 0] Received message from Unity: {'type': 'command', 'command': 'takeoff', 'altitude': 3, 'id': 0, '_t_received': 32254.4429175, '_id': '89a1fc01-8452-4e4e-9825-8067bf338cc1'}
-[DroneInstance 0] LatencyProbe | Sent takeoff id=89a1fc01-8452-4e4e-9825-8067bf338cc1 at 32254.443214
-[DroneInstance 0] Shutting down DroneInstance...

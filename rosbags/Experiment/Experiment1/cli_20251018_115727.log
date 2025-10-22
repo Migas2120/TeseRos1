@@ -1,0 +1,139 @@
+[DroneInstance 0] Initializing DroneInstance with domain ID 0 [SAFE mode]
+[DroneInstance 0] Battery percentage unavailable.
+[DroneInstance 0] LatencyProbe | Received N/A id=2ec24639-f0e3-41c2-8f45-0ade8ba440bd at 5690.883064
+[DroneInstance 0] Received message from Unity: {'type': 'add_mission', 'mission_id': 'Mission_3070', 'waypoints': [{'coords': [0.9739012718200684, 9.84433364868164, 0.5266876220703125], 'hold': 0.0}, {'coords': [-5.320606231689453, 13.327713012695312, 4.9848175048828125], 'hold': 0.0}, {'coords': [5.072179317474365, 12.068270683288574, 8.209080696105957], 'hold': 0.0}, {'coords': [-5.431471347808838, 8.536101341247559, 7.932511329650879], 'hold': 0.0}, {'coords': [-0.5979124903678894, 18.638566970825195, 6.671402931213379], 'hold': 0.0}, {'coords': [-7.798031330108643, 7.875311851501465, 4.155679702758789], 'hold': 0.0}], 'mode': 'once', 'patrol_loops': 1, 'priority': 1, 'preempt': False}
+[DroneInstance 0] Mission 'Mission_3070' added with priority 1 and 6 waypoints.
+[DroneInstance 0] Resetting takeoff flags (drone on ground).
+[DroneInstance 0] Starting mission: Mission_3070
+[DroneInstance 0] Drone not armed. Sending arm command.
+[DroneInstance 0] Switching to GUIDED mode.
+[DroneInstance 0] Initiating takeoff to 2.0m.
+[DroneInstance 0] Waiting to reach takeoff altitude: z=-0.01
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.10
+[DroneInstance 0] Waiting to reach takeoff altitude: z=1.14
+[DroneInstance 0] Reached takeoff altitude. Starting mission.
+[DroneInstance 0] Distance to waypoint: 9.98 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5698.862278
+[DroneInstance 0] Distance to waypoint: 9.62 meters
+[DroneInstance 0] Distance to waypoint: 6.99 meters
+[DroneInstance 0] Distance to waypoint: 3.42 meters
+[DroneInstance 0] Distance to waypoint: 0.85 meters
+[DroneInstance 0] Distance to waypoint: 0.23 meters
+[DroneInstance 0] _complete_current_waypoint: idx=0, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #1 to #2
+[DroneInstance 0] Distance to waypoint: 8.34 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5704.862026
+[DroneInstance 0] Distance to waypoint: 7.91 meters
+[DroneInstance 0] Distance to waypoint: 5.14 meters
+[DroneInstance 0] Distance to waypoint: 2.05 meters
+[DroneInstance 0] Distance to waypoint: 0.36 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #2 to #3
+[DroneInstance 0] Distance to waypoint: 11.13 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5709.861032
+[DroneInstance 0] Distance to waypoint: 10.62 meters
+[DroneInstance 0] Distance to waypoint: 7.57 meters
+[DroneInstance 0] Distance to waypoint: 3.77 meters
+[DroneInstance 0] Distance to waypoint: 1.07 meters
+[DroneInstance 0] Distance to waypoint: 0.18 meters
+[DroneInstance 0] _complete_current_waypoint: idx=2, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #3 to #4
+[DroneInstance 0] Distance to waypoint: 11.42 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5715.861587
+[DroneInstance 0] Distance to waypoint: 10.90 meters
+[DroneInstance 0] Distance to waypoint: 8.09 meters
+[DroneInstance 0] Distance to waypoint: 4.25 meters
+[DroneInstance 0] Distance to waypoint: 1.34 meters
+[DroneInstance 0] Distance to waypoint: 0.09 meters
+[DroneInstance 0] _complete_current_waypoint: idx=3, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #4 to #5
+[DroneInstance 0] Distance to waypoint: 11.45 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5721.862018
+[DroneInstance 0] Distance to waypoint: 10.98 meters
+[DroneInstance 0] Distance to waypoint: 8.21 meters
+[DroneInstance 0] Distance to waypoint: 4.27 meters
+[DroneInstance 0] Distance to waypoint: 1.29 meters
+[DroneInstance 0] Distance to waypoint: 0.16 meters
+[DroneInstance 0] _complete_current_waypoint: idx=4, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #5 to #6
+[DroneInstance 0] Distance to waypoint: 13.58 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5727.861329
+[DroneInstance 0] Distance to waypoint: 13.03 meters
+[DroneInstance 0] Distance to waypoint: 10.11 meters
+[DroneInstance 0] LatencyProbe | Received N/A id=7daad90e-30b5-4d97-80a2-ec1e250887aa at 5730.753758
+[DroneInstance 0] Received message from Unity: {'type': 'add_mission', 'mission_id': 'Mission_8320', 'waypoints': [{'coords': [-1.942305326461792, -6.702953338623047, 6.4670820236206055], 'hold': 0.0}, {'coords': [-15.179492950439453, 1.4875099658966064, 5.625975608825684], 'hold': 0.0}, {'coords': [13.252781867980957, -2.700709581375122, 8.937494277954102], 'hold': 0.0}, {'coords': [-2.1593785285949707, -11.245779037475586, 9.280911445617676], 'hold': 0.0}, {'coords': [1.9984807968139648, 2.973634719848633, 2.2867016792297363], 'hold': 0.0}], 'mode': 'once', 'patrol_loops': 1, 'priority': 87, 'preempt': True}
+[DroneInstance 0] Preempting mission 'Mission_3070' with 'Mission_8320'.
+[DroneInstance 0] Paused mission chain: ['Mission_3070']
+[DroneInstance 0] Distance to waypoint: 19.63 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5730.861243
+[DroneInstance 0] Distance to waypoint: 16.74 meters
+[DroneInstance 0] Distance to waypoint: 12.45 meters
+[DroneInstance 0] Distance to waypoint: 7.48 meters
+[DroneInstance 0] Distance to waypoint: 3.42 meters
+[DroneInstance 0] Distance to waypoint: 0.67 meters
+[DroneInstance 0] Still approaching target... 0.67m remaining
+[DroneInstance 0] Distance to waypoint: 0.44 meters
+[DroneInstance 0] _complete_current_waypoint: idx=0, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #1 to #2
+[DroneInstance 0] Distance to waypoint: 15.91 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5737.862031
+[DroneInstance 0] Distance to waypoint: 15.38 meters
+[DroneInstance 0] Distance to waypoint: 12.53 meters
+[DroneInstance 0] Distance to waypoint: 7.90 meters
+[DroneInstance 0] Distance to waypoint: 3.76 meters
+[DroneInstance 0] Distance to waypoint: 0.90 meters
+[DroneInstance 0] Distance to waypoint: 0.30 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #2 to #3
+[DroneInstance 0] Distance to waypoint: 29.28 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5744.861977
+[DroneInstance 0] Distance to waypoint: 28.65 meters
+[DroneInstance 0] Distance to waypoint: 25.68 meters
+[DroneInstance 0] Distance to waypoint: 20.43 meters
+[DroneInstance 0] Distance to waypoint: 13.98 meters
+[DroneInstance 0] Distance to waypoint: 8.22 meters
+[DroneInstance 0] Distance to waypoint: 3.61 meters
+[DroneInstance 0] Still approaching target... 3.61m remaining
+[DroneInstance 0] Distance to waypoint: 0.57 meters
+[DroneInstance 0] Still approaching target... 0.57m remaining
+[DroneInstance 0] Distance to waypoint: 0.60 meters
+[DroneInstance 0] No progress. Retrying waypoint command (2/3)
+[DroneInstance 0] LatencyProbe | Sent pos command at 5752.862348
+[DroneInstance 0] Distance to waypoint: 0.59 meters
+[DroneInstance 0] Distance to waypoint: 0.34 meters
+[DroneInstance 0] _complete_current_waypoint: idx=2, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #3 to #4
+[DroneInstance 0] Distance to waypoint: 17.78 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5755.861909
+[DroneInstance 0] Distance to waypoint: 17.29 meters
+[DroneInstance 0] Distance to waypoint: 14.58 meters
+[DroneInstance 0] Distance to waypoint: 9.81 meters
+[DroneInstance 0] Distance to waypoint: 5.23 meters
+[DroneInstance 0] Distance to waypoint: 1.78 meters
+[DroneInstance 0] Still approaching target... 1.78m remaining
+[DroneInstance 0] Distance to waypoint: 0.08 meters
+[DroneInstance 0] _complete_current_waypoint: idx=3, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #4 to #5
+[DroneInstance 0] Distance to waypoint: 16.64 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5762.862029
+[DroneInstance 0] Distance to waypoint: 16.06 meters
+[DroneInstance 0] Distance to waypoint: 13.29 meters
+[DroneInstance 0] Distance to waypoint: 9.72 meters
+[DroneInstance 0] Distance to waypoint: 6.04 meters
+[DroneInstance 0] Distance to waypoint: 2.54 meters
+[DroneInstance 0] Distance to waypoint: 0.31 meters
+[DroneInstance 0] _complete_current_waypoint: idx=4, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #5 to #6
+[DroneInstance 0] Mission 'Mission_8320' complete.
+[DroneInstance 0] Resuming paused mission 'Mission_3070' from waypoint 5.
+[DroneInstance 0] Distance to waypoint: 11.07 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 5770.861763
+[DroneInstance 0] Distance to waypoint: 10.59 meters
+[DroneInstance 0] Distance to waypoint: 7.78 meters
+[DroneInstance 0] Distance to waypoint: 4.06 meters
+[DroneInstance 0] Distance to waypoint: 1.24 meters
+[DroneInstance 0] Distance to waypoint: 0.12 meters
+[DroneInstance 0] _complete_current_waypoint: idx=0, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #1 to #2
+[DroneInstance 0] Mission 'Mission_3070' complete.
+[DroneInstance 0] Shutting down DroneInstance...

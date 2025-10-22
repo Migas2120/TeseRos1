@@ -11,12 +11,14 @@ Key Features:
 - Routes incoming messages to `AppRunner`
 """
 
+import json
 import socket
 import select
 import logging
-
+import os
 import time
 import threading
+import datetime
 
 class ThroughputMonitor:
     def __init__(self, logger, log_file=None):
@@ -52,7 +54,7 @@ class ThroughputMonitor:
                 tx_kbps = (self.tx_bytes * 8 / 1000) / elapsed
 
                 # Log to console
-                self.logger.info(f"[Throughput] RX={rx_kbps:.2f} kbps | TX={tx_kbps:.2f} kbps")
+                self.logger.debug(f"[Throughput] RX={rx_kbps:.2f} kbps | TX={tx_kbps:.2f} kbps")
 
                 # Also append to file
                 if self.log_file:
@@ -65,7 +67,7 @@ class ThroughputMonitor:
                             }
                             f.write(json.dumps(entry) + "\n")
                     except Exception as e:
-                        self.logger.error(f"[Throughput] Failed to write log: {e}")
+                        self.logger.debug(f"[Throughput] Failed to write log: {e}")
 
                 # reset counters
                 self.rx_bytes = 0

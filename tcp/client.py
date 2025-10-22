@@ -2,6 +2,7 @@
 import socket
 import threading
 import sys
+import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))        # .../ros1_server/scripts
 package_root = os.path.abspath(os.path.join(current_dir, '..')) # .../ros1_server

@@ -11,7 +11,7 @@ import os
 # ======================================================
 # CONFIG
 # ======================================================
-CALLBACK_HOST = "127.0.0.1"
+CALLBACK_HOST = "0.0.0.0"
 CALLBACK_PORT = 12345  # local telemetry server (we receive here)
 REMOTE_HOST   = "127.0.0.1"
 REMOTE_PORT   = 65432  # drone-side middleman (we send missions to here)
@@ -160,32 +160,45 @@ mission_40 = {
 # ======================================================
 # TCP SERVER (to receive telemetry back)
 # ======================================================
-def telemetry_server(monitor: ThroughputMonitor):
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind((CALLBACK_HOST, CALLBACK_PORT))
-    server.listen(1)
-    logger.info(f"[SERVER] Listening for telemetry on {CALLBACK_HOST}:{CALLBACK_PORT} ...")
-
-    conn, addr = server.accept()
+def handle_client(conn, addr, monitor: ThroughputMonitor):
+    """Handle telemetry from a single drone connection."""
     logger.info(f"[SERVER] Telemetry connected from {addr}")
-
     try:
         while True:
             data = conn.recv(4096)
             if not data:
-                logger.info("[SERVER] Connection closed by client.")
+                logger.info(f"[SERVER] Connection closed by {addr}")
                 break
             monitor.add_rx(len(data))
-            # Optional: Print telemetry preview
             try:
                 msg = json.loads(data.decode("utf-8").strip())
-                logger.debug(f"[SERVER] Telemetry: {msg}")
+                logger.debug(f"[SERVER] Telemetry from {addr}: {msg}")
             except Exception:
+                # don't spam logs if invalid json
                 pass
     except Exception as e:
-        logger.error(f"[SERVER] Error: {e}")
+        logger.error(f"[SERVER] Error with {addr}: {e}")
     finally:
         conn.close()
+        logger.info(f"[SERVER] Closed connection with {addr}")
+
+
+def telemetry_server(monitor: ThroughputMonitor):
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind((CALLBACK_HOST, CALLBACK_PORT))
+    # allow multiple pending connections
+    server.listen(10)
+    logger.info(f"[SERVER] Listening for telemetry on {CALLBACK_HOST}:{CALLBACK_PORT} ...")
+
+    try:
+        while True:
+            conn, addr = server.accept()
+            threading.Thread(
+                target=handle_client, args=(conn, addr, monitor), daemon=True
+            ).start()
+    except Exception as e:
+        logger.error(f"[SERVER] Fatal error: {e}")
+    finally:
         server.close()
         logger.info("[SERVER] Closed telemetry server.")
 

@@ -12,10 +12,10 @@ from scipy.spatial import ConvexHull  # <-- NEW
 import trimesh
 
 # ---- CONFIG ----
-bag_path = "flight_20251015_162020.bag"
+bag_path = "flight_20251028_134750.bag"
 pose_topic = "/mavros/local_position/pose"
 vel_topic = "/mavros/local_position/velocity_local"
-waypoints_file = "last_mission.json"
+waypoints_file = "parsed_missions.json"
 
 # ---- READ WAYPOINTS (from Unity sender script) ----
 waypoints = None

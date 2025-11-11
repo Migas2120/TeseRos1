@@ -1,0 +1,46 @@
+========= Detailed Run Statistics =========
+Run 1:
+  Avg Latency Used : 332.68 ms
+  Mean             : 324.80 ms
+  Std. Dev.        : 37.20 ms
+  Max              : 421.35 ms
+  Min              : 273.34 ms
+-------------------------------------------
+Run 2:
+  Avg Latency Used : 383.64 ms
+  Mean             : 371.74 ms
+  Std. Dev.        : 35.13 ms
+  Max              : 432.24 ms
+  Min              : 309.88 ms
+-------------------------------------------
+Run 3:
+  Avg Latency Used : 514.01 ms
+  Mean             : 510.57 ms
+  Std. Dev.        : 27.00 ms
+  Max              : 561.49 ms
+  Min              : 458.24 ms
+-------------------------------------------
+Run 4:
+  Avg Latency Used : 389.68 ms
+  Mean             : 382.51 ms
+  Std. Dev.        : 28.62 ms
+  Max              : 465.94 ms
+  Min              : 325.93 ms
+-------------------------------------------
+Run 5:
+  Avg Latency Used : 436.98 ms
+  Mean             : 451.45 ms
+  Std. Dev.        : 31.16 ms
+  Max              : 522.66 ms
+  Min              : 396.75 ms
+-------------------------------------------
+============= Overall Summary =============
+Number of Runs        : 5
+Base Avg Latency      : 412.02 ms
+Avg Latencies Used    : ['332.7', '383.6', '514.0', '389.7', '437.0']
+Mean of Means (ms)    : 408.21
+Mean of Std Dev (ms)  : 31.82
+Max of Max (ms)       : 561.49
+Min of Min (ms)       : 273.34
+Plots saved in        : plots/
+===========================================

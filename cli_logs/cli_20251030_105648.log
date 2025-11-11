@@ -1,0 +1,199 @@
+[DroneInstance 0] Initializing DroneInstance with domain ID 0 [SAFE mode]
+[DroneInstance 0] LatencyProbe | Received N/A id=3572e52a-016a-4405-a772-88c7faf6fd27 at 2581.086763
+[DroneInstance 0] Received message from Unity: {'type': 'map_area', 'mission_id': 'Mission_7176', 'points': [{'x': 0.9153612852096558, 'y': 11.0160493850708, 'z': 2.578423500061035}, {'x': 0.8103763461112976, 'y': 11.678894996643066, 'z': 2.578423500061035}, {'x': 0.5056988000869751, 'y': 12.276856422424316, 'z': 2.578423500061035}, {'x': 0.031151752918958664, 'y': 12.751402854919434, 'z': 2.578423500061035}, {'x': -0.5668118000030518, 'y': 13.05608081817627, 'z': 2.578423500061035}, {'x': -1.2296593189239502, 'y': 13.161065101623535, 'z': 2.578423500061035}, {'x': -1.892506718635559, 'y': 13.05608081817627, 'z': 2.578423500061035}, {'x': -2.4904725551605225, 'y': 12.751402854919434, 'z': 2.578423500061035}, {'x': -2.9650185108184814, 'y': 12.276856422424316, 'z': 2.578423500061035}, {'x': -3.269695997238159, 'y': 11.678894996643066, 'z': 2.578423500061035}, {'x': -3.374680757522583, 'y': 11.0160493850708, 'z': 2.578423500061035}, {'x': -3.269695997238159, 'y': 10.353201866149902, 'z': 2.578423500061035}, {'x': -2.9650185108184814, 'y': 9.755236625671387, 'z': 2.578423500061035}, {'x': -2.490471601486206, 'y': 9.28069019317627, 'z': 2.578423500061035}, {'x': -1.8925060033798218, 'y': 8.9760160446167, 'z': 2.578423500061035}, {'x': -1.2296591997146606, 'y': 8.8710298538208, 'z': 2.578423500061035}, {'x': -0.5668114423751831, 'y': 8.9760160446167, 'z': 2.578423500061035}, {'x': 0.031152229756116867, 'y': 9.280692100524902, 'z': 2.578423500061035}, {'x': 0.505698561668396, 'y': 9.755236625671387, 'z': 2.578423500061035}, {'x': 0.8103763461112976, 'y': 10.353201866149902, 'z': 2.578423500061035}, {'x': 0.9153612852096558, 'y': 11.0160493850708, 'z': 9.728489875793457}, {'x': 0.8103763461112976, 'y': 11.678894996643066, 'z': 9.728489875793457}, {'x': 0.5056988000869751, 'y': 12.276856422424316, 'z': 9.728489875793457}, {'x': 0.031151752918958664, 'y': 12.751402854919434, 'z': 9.728489875793457}, {'x': -0.5668118000030518, 'y': 13.05608081817627, 'z': 9.728489875793457}, {'x': -1.2296593189239502, 'y': 13.161065101623535, 'z': 9.728489875793457}, {'x': -1.892506718635559, 'y': 13.05608081817627, 'z': 9.728489875793457}, {'x': -2.4904725551605225, 'y': 12.751402854919434, 'z': 9.728489875793457}, {'x': -2.9650185108184814, 'y': 12.276856422424316, 'z': 9.728489875793457}, {'x': -3.269695997238159, 'y': 11.678894996643066, 'z': 9.728489875793457}, {'x': -3.374680757522583, 'y': 11.0160493850708, 'z': 9.728489875793457}, {'x': -3.269695997238159, 'y': 10.353201866149902, 'z': 9.728489875793457}, {'x': -2.9650185108184814, 'y': 9.755236625671387, 'z': 9.728489875793457}, {'x': -2.490471601486206, 'y': 9.28069019317627, 'z': 9.728489875793457}, {'x': -1.8925060033798218, 'y': 8.9760160446167, 'z': 9.728489875793457}, {'x': -1.2296591997146606, 'y': 8.8710298538208, 'z': 9.728489875793457}, {'x': -0.5668114423751831, 'y': 8.9760160446167, 'z': 9.728489875793457}, {'x': 0.031152229756116867, 'y': 9.280692100524902, 'z': 9.728489875793457}, {'x': 0.505698561668396, 'y': 9.755236625671387, 'z': 9.728489875793457}, {'x': 0.8103763461112976, 'y': 10.353201866149902, 'z': 9.728489875793457}], 'grid_spacing': 0.7251488566398621, 'vertical_step': 2.3833553791046143, 'priority': 1, 'preempt': False}
+[DroneInstance 0] Mission 'Mission_7176' added with priority 1 and 100 waypoints.
+[DroneInstance 0] Resetting takeoff flags (drone on ground).
+[DroneInstance 0] {'type': 'add_mission', 'mission_id': 'Mission_7176', 'waypoints': [(0.2510635256767273, 9.596178710460663, 2.578423500061035), (-0.47408533096313477, 9.596178710460663, 2.578423500061035), (-1.1992341876029968, 9.596178710460663, 2.578423500061035), (-1.9243830442428589, 9.596178710460663, 2.578423500061035), (-2.649531900882721, 9.596178710460663, 2.578423500061035), (-2.649531900882721, 10.321327567100525, 2.578423500061035), (-1.9243830442428589, 10.321327567100525, 2.578423500061035), (-1.1992341876029968, 10.321327567100525, 2.578423500061035), (-0.47408533096313477, 10.321327567100525, 2.578423500061035), (0.2510635256767273, 10.321327567100525, 2.578423500061035), (0.2510635256767273, 11.046476423740387, 2.578423500061035), (-0.47408533096313477, 11.046476423740387, 2.578423500061035), (-1.1992341876029968, 11.046476423740387, 2.578423500061035), (-1.9243830442428589, 11.046476423740387, 2.578423500061035), (-2.649531900882721, 11.046476423740387, 2.578423500061035), (-2.649531900882721, 11.771625280380249, 2.578423500061035), (-1.9243830442428589, 11.771625280380249, 2.578423500061035), (-1.1992341876029968, 11.771625280380249, 2.578423500061035), (-0.47408533096313477, 11.771625280380249, 2.578423500061035), (0.2510635256767273, 11.771625280380249, 2.578423500061035), (0.2510635256767273, 12.496774137020111, 2.578423500061035), (-0.47408533096313477, 12.496774137020111, 2.578423500061035), (-1.1992341876029968, 12.496774137020111, 2.578423500061035), (-1.9243830442428589, 12.496774137020111, 2.578423500061035), (-2.649531900882721, 12.496774137020111, 2.578423500061035), (0.2510635256767273, 9.596178710460663, 4.961778879165649), (-0.47408533096313477, 9.596178710460663, 4.961778879165649), (-1.1992341876029968, 9.596178710460663, 4.961778879165649), (-1.9243830442428589, 9.596178710460663, 4.961778879165649), (-2.649531900882721, 9.596178710460663, 4.961778879165649), (-2.649531900882721, 10.321327567100525, 4.961778879165649), (-1.9243830442428589, 10.321327567100525, 4.961778879165649), (-1.1992341876029968, 10.321327567100525, 4.961778879165649), (-0.47408533096313477, 10.321327567100525, 4.961778879165649), (0.2510635256767273, 10.321327567100525, 4.961778879165649), (0.2510635256767273, 11.046476423740387, 4.961778879165649), (-0.47408533096313477, 11.046476423740387, 4.961778879165649), (-1.1992341876029968, 11.046476423740387, 4.961778879165649), (-1.9243830442428589, 11.046476423740387, 4.961778879165649), (-2.649531900882721, 11.046476423740387, 4.961778879165649), (-2.649531900882721, 11.771625280380249, 4.961778879165649), (-1.9243830442428589, 11.771625280380249, 4.961778879165649), (-1.1992341876029968, 11.771625280380249, 4.961778879165649), (-0.47408533096313477, 11.771625280380249, 4.961778879165649), (0.2510635256767273, 11.771625280380249, 4.961778879165649), (0.2510635256767273, 12.496774137020111, 4.961778879165649), (-0.47408533096313477, 12.496774137020111, 4.961778879165649), (-1.1992341876029968, 12.496774137020111, 4.961778879165649), (-1.9243830442428589, 12.496774137020111, 4.961778879165649), (-2.649531900882721, 12.496774137020111, 4.961778879165649), (0.2510635256767273, 9.596178710460663, 7.345134258270264), (-0.47408533096313477, 9.596178710460663, 7.345134258270264), (-1.1992341876029968, 9.596178710460663, 7.345134258270264), (-1.9243830442428589, 9.596178710460663, 7.345134258270264), (-2.649531900882721, 9.596178710460663, 7.345134258270264), (-2.649531900882721, 10.321327567100525, 7.345134258270264), (-1.9243830442428589, 10.321327567100525, 7.345134258270264), (-1.1992341876029968, 10.321327567100525, 7.345134258270264), (-0.47408533096313477, 10.321327567100525, 7.345134258270264), (0.2510635256767273, 10.321327567100525, 7.345134258270264), (0.2510635256767273, 11.046476423740387, 7.345134258270264), (-0.47408533096313477, 11.046476423740387, 7.345134258270264), (-1.1992341876029968, 11.046476423740387, 7.345134258270264), (-1.9243830442428589, 11.046476423740387, 7.345134258270264), (-2.649531900882721, 11.046476423740387, 7.345134258270264), (-2.649531900882721, 11.771625280380249, 7.345134258270264), (-1.9243830442428589, 11.771625280380249, 7.345134258270264), (-1.1992341876029968, 11.771625280380249, 7.345134258270264), (-0.47408533096313477, 11.771625280380249, 7.345134258270264), (0.2510635256767273, 11.771625280380249, 7.345134258270264), (0.2510635256767273, 12.496774137020111, 7.345134258270264), (-0.47408533096313477, 12.496774137020111, 7.345134258270264), (-1.1992341876029968, 12.496774137020111, 7.345134258270264), (-1.9243830442428589, 12.496774137020111, 7.345134258270264), (-2.649531900882721, 12.496774137020111, 7.345134258270264), (0.2510635256767273, 9.596178710460663, 9.728489637374878), (-0.47408533096313477, 9.596178710460663, 9.728489637374878), (-1.1992341876029968, 9.596178710460663, 9.728489637374878), (-1.9243830442428589, 9.596178710460663, 9.728489637374878), (-2.649531900882721, 9.596178710460663, 9.728489637374878), (-2.649531900882721, 10.321327567100525, 9.728489637374878), (-1.9243830442428589, 10.321327567100525, 9.728489637374878), (-1.1992341876029968, 10.321327567100525, 9.728489637374878), (-0.47408533096313477, 10.321327567100525, 9.728489637374878), (0.2510635256767273, 10.321327567100525, 9.728489637374878), (0.2510635256767273, 11.046476423740387, 9.728489637374878), (-0.47408533096313477, 11.046476423740387, 9.728489637374878), (-1.1992341876029968, 11.046476423740387, 9.728489637374878), (-1.9243830442428589, 11.046476423740387, 9.728489637374878), (-2.649531900882721, 11.046476423740387, 9.728489637374878), (-2.649531900882721, 11.771625280380249, 9.728489637374878), (-1.9243830442428589, 11.771625280380249, 9.728489637374878), (-1.1992341876029968, 11.771625280380249, 9.728489637374878), (-0.47408533096313477, 11.771625280380249, 9.728489637374878), (0.2510635256767273, 11.771625280380249, 9.728489637374878), (0.2510635256767273, 12.496774137020111, 9.728489637374878), (-0.47408533096313477, 12.496774137020111, 9.728489637374878), (-1.1992341876029968, 12.496774137020111, 9.728489637374878), (-1.9243830442428589, 12.496774137020111, 9.728489637374878), (-2.649531900882721, 12.496774137020111, 9.728489637374878)], 'mode': 'once', 'patrol_loops': 1, 'priority': 1, 'preempt': False}
+[DroneInstance 0] [3D Slicer] 100 waypoints generated from 3D hull between Z=2.58-9.73 every 2.3833553791046143m.
+[DroneInstance 0] Starting mission: Mission_7176
+[DroneInstance 0] Drone not armed. Sending arm command.
+[DroneInstance 0] Switching to GUIDED mode.
+[DroneInstance 0] Initiating takeoff to 2.0m.
+[DroneInstance 0] Waiting to reach takeoff altitude: z=-0.01
+[DroneInstance 0] Waiting to reach takeoff altitude: z=0.07
+[DroneInstance 0] Waiting to reach takeoff altitude: z=1.07
+[DroneInstance 0] Reached takeoff altitude. Starting mission.
+[DroneInstance 0] Distance to waypoint: 9.62 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2589.022073
+[DroneInstance 0] Distance to waypoint: 9.30 meters
+[DroneInstance 0] Distance to waypoint: 6.89 meters
+[DroneInstance 0] Distance to waypoint: 3.44 meters
+[DroneInstance 0] Distance to waypoint: 0.90 meters
+[DroneInstance 0] Distance to waypoint: 0.17 meters
+[DroneInstance 0] _complete_current_waypoint: idx=0, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #1 to #2
+[DroneInstance 0] Distance to waypoint: 0.80 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2595.022702
+[DroneInstance 0] Distance to waypoint: 0.60 meters
+[DroneInstance 0] Distance to waypoint: 0.18 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #2 to #3
+[DroneInstance 0] LatencyProbe | Received N/A id=c6f12478-5d0c-4a94-b2bb-a1f0a3d088fd at 2597.704906
+[DroneInstance 0] Received message from Unity: {'type': 'add_mission', 'mission_id': 'Mission_7218', 'waypoints': [{'coords': [0.9283345937728882, 6.5233683586120605, 1.2315658330917358], 'hold': 0.0}, {'coords': [0.17698301374912262, -0.09066446870565414, 0.3262820243835449], 'hold': 0.0}], 'mode': 'once', 'patrol_loops': 1, 'priority': 1, 'preempt': False}
+[DroneInstance 0] Mission 'Mission_7218' added with priority 1 and 2 waypoints.
+[DroneInstance 0] Distance to waypoint: 0.71 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2598.022645
+[DroneInstance 0] Distance to waypoint: 0.54 meters
+[DroneInstance 0] Distance to waypoint: 0.14 meters
+[DroneInstance 0] _complete_current_waypoint: idx=2, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #3 to #4
+[DroneInstance 0] Distance to waypoint: 0.71 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2601.022715
+[DroneInstance 0] Distance to waypoint: 0.54 meters
+[DroneInstance 0] Distance to waypoint: 0.14 meters
+[DroneInstance 0] _complete_current_waypoint: idx=3, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #4 to #5
+[DroneInstance 0] Distance to waypoint: 0.72 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2604.022772
+[DroneInstance 0] Distance to waypoint: 0.55 meters
+[DroneInstance 0] Distance to waypoint: 0.14 meters
+[DroneInstance 0] _complete_current_waypoint: idx=4, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #5 to #6
+[DroneInstance 0] Distance to waypoint: 0.71 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2607.022750
+[DroneInstance 0] Distance to waypoint: 0.53 meters
+[DroneInstance 0] Distance to waypoint: 0.11 meters
+[DroneInstance 0] _complete_current_waypoint: idx=5, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #6 to #7
+[DroneInstance 0] Distance to waypoint: 0.72 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2610.022722
+[DroneInstance 0] Distance to waypoint: 0.54 meters
+[DroneInstance 0] Distance to waypoint: 0.12 meters
+[DroneInstance 0] _complete_current_waypoint: idx=6, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #7 to #8
+[DroneInstance 0] Distance to waypoint: 0.68 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2613.022661
+[DroneInstance 0] Distance to waypoint: 0.51 meters
+[DroneInstance 0] Distance to waypoint: 0.10 meters
+[DroneInstance 0] _complete_current_waypoint: idx=7, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #8 to #9
+[DroneInstance 0] Distance to waypoint: 0.68 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2616.022747
+[DroneInstance 0] Distance to waypoint: 0.50 meters
+[DroneInstance 0] Distance to waypoint: 0.09 meters
+[DroneInstance 0] _complete_current_waypoint: idx=8, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #9 to #10
+[DroneInstance 0] Distance to waypoint: 0.67 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2619.022807
+[DroneInstance 0] Distance to waypoint: 0.50 meters
+[DroneInstance 0] Distance to waypoint: 0.10 meters
+[DroneInstance 0] _complete_current_waypoint: idx=9, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #10 to #11
+[DroneInstance 0] Distance to waypoint: 0.71 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2622.022802
+[DroneInstance 0] Distance to waypoint: 0.54 meters
+[DroneInstance 0] Distance to waypoint: 0.12 meters
+[DroneInstance 0] _complete_current_waypoint: idx=10, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #11 to #12
+[DroneInstance 0] Distance to waypoint: 0.76 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2625.021933
+[DroneInstance 0] Distance to waypoint: 0.58 meters
+[DroneInstance 0] Distance to waypoint: 0.15 meters
+[DroneInstance 0] _complete_current_waypoint: idx=11, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #12 to #13
+[DroneInstance 0] Distance to waypoint: 0.72 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2628.022782
+[DroneInstance 0] Distance to waypoint: 0.54 meters
+[DroneInstance 0] Distance to waypoint: 0.13 meters
+[DroneInstance 0] _complete_current_waypoint: idx=12, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #13 to #14
+[DroneInstance 0] Distance to waypoint: 0.71 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2631.021841
+[DroneInstance 0] Distance to waypoint: 0.54 meters
+[DroneInstance 0] Distance to waypoint: 0.13 meters
+[DroneInstance 0] _complete_current_waypoint: idx=13, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #14 to #15
+[DroneInstance 0] Distance to waypoint: 0.71 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2634.022795
+[DroneInstance 0] Distance to waypoint: 0.54 meters
+[DroneInstance 0] Distance to waypoint: 0.13 meters
+[DroneInstance 0] _complete_current_waypoint: idx=14, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #15 to #16
+[DroneInstance 0] Distance to waypoint: 0.71 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2637.022413
+[DroneInstance 0] Distance to waypoint: 0.53 meters
+[DroneInstance 0] Distance to waypoint: 0.12 meters
+[DroneInstance 0] _complete_current_waypoint: idx=15, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #16 to #17
+[DroneInstance 0] Distance to waypoint: 0.72 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2640.022806
+[DroneInstance 0] Distance to waypoint: 0.53 meters
+[DroneInstance 0] Distance to waypoint: 0.11 meters
+[DroneInstance 0] _complete_current_waypoint: idx=16, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #17 to #18
+[DroneInstance 0] Distance to waypoint: 0.68 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2643.022826
+[DroneInstance 0] Distance to waypoint: 0.50 meters
+[DroneInstance 0] _complete_current_waypoint: idx=17, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #18 to #19
+[DroneInstance 0] Distance to waypoint: 0.82 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2645.022724
+[DroneInstance 0] Distance to waypoint: 0.50 meters
+[DroneInstance 0] _complete_current_waypoint: idx=18, hold_duration=0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #19 to #20
+[DroneInstance 0] Distance to waypoint: 0.80 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2647.022704
+[DroneInstance 0] LatencyProbe | Received N/A id=fd4e35e9-5acc-4aba-b0de-c6ea3a96eb50 at 2647.788718
+[DroneInstance 0] Received message from Unity: {'type': 'add_mission', 'mission_id': 'Mission_8150', 'waypoints': [{'coords': [-3.111077308654785, 3.007307529449463, 2.975442409515381], 'hold': 0.0}, {'coords': [3.1686787605285645, 4.38299560546875, 2.28548526763916], 'hold': 5.0}, {'coords': [-2.276306629180908, 12.040719985961914, 9.79172420501709], 'hold': 0.0}, {'coords': [5.021523475646973, 3.738712787628174, 5.048251152038574], 'hold': 10.0}], 'mode': 'once', 'patrol_loops': 1, 'priority': 90, 'preempt': True}
+[DroneInstance 0] Preempting mission 'Mission_7176' with 'Mission_8150'.
+[DroneInstance 0] Paused mission chain: ['Mission_7176']
+[DroneInstance 0] Distance to waypoint: 9.24 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2648.022760
+[DroneInstance 0] Distance to waypoint: 9.07 meters
+[DroneInstance 0] Distance to waypoint: 6.75 meters
+[DroneInstance 0] Distance to waypoint: 3.33 meters
+[DroneInstance 0] Distance to waypoint: 0.83 meters
+[DroneInstance 0] Distance to waypoint: 0.20 meters
+[DroneInstance 0] _complete_current_waypoint: idx=0, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #1 to #2
+[DroneInstance 0] Distance to waypoint: 6.61 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2654.022773
+[DroneInstance 0] Distance to waypoint: 6.23 meters
+[DroneInstance 0] Distance to waypoint: 3.81 meters
+[DroneInstance 0] Distance to waypoint: 1.23 meters
+[DroneInstance 0] Distance to waypoint: 0.05 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=5.0, is_holding=False, hold_start_time=None
+[DroneInstance 0] Starting hold at waypoint #2 for 5.0s
+[DroneInstance 0] Distance to waypoint: 0.28 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=5.0, is_holding=True, hold_start_time=1761821949.977516
+[DroneInstance 0]  Holding… elapsed=1.00s / target=5.00s
+[DroneInstance 0] Distance to waypoint: 0.21 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=5.0, is_holding=True, hold_start_time=1761821949.977516
+[DroneInstance 0]  Holding… elapsed=2.00s / target=5.00s
+[DroneInstance 0] Distance to waypoint: 0.12 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=5.0, is_holding=True, hold_start_time=1761821949.977516
+[DroneInstance 0]  Holding… elapsed=3.00s / target=5.00s
+[DroneInstance 0] Distance to waypoint: 0.07 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=5.0, is_holding=True, hold_start_time=1761821949.977516
+[DroneInstance 0]  Holding… elapsed=4.00s / target=5.00s
+[DroneInstance 0] Distance to waypoint: 0.04 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=5.0, is_holding=True, hold_start_time=1761821949.977516
+[DroneInstance 0]  Holding… elapsed=5.00s / target=5.00s
+[DroneInstance 0] Distance to waypoint: 0.03 meters
+[DroneInstance 0] _complete_current_waypoint: idx=1, hold_duration=5.0, is_holding=True, hold_start_time=1761821949.977516
+[DroneInstance 0]  Holding… elapsed=6.00s / target=5.00s
+[DroneInstance 0]  Hold complete at waypoint #2 after 6.00s
+[DroneInstance 0]  Advancing from waypoint #2 to #3
+[DroneInstance 0] Distance to waypoint: 12.02 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2665.022759
+[DroneInstance 0] Distance to waypoint: 11.62 meters
+[DroneInstance 0] Distance to waypoint: 9.08 meters
+[DroneInstance 0] Distance to waypoint: 5.72 meters
+[DroneInstance 0] Distance to waypoint: 2.68 meters
+[DroneInstance 0] Distance to waypoint: 0.82 meters
+[DroneInstance 0] Distance to waypoint: 0.28 meters
+[DroneInstance 0] _complete_current_waypoint: idx=2, hold_duration=0.0, is_holding=False, hold_start_time=None
+[DroneInstance 0]  Advancing from waypoint #3 to #4
+[DroneInstance 0] Distance to waypoint: 12.23 meters
+[DroneInstance 0] LatencyProbe | Sent pos command at 2672.021745
+[DroneInstance 0] Distance to waypoint: 11.74 meters
+[DroneInstance 0] Distance to waypoint: 9.04 meters
+[DroneInstance 0] Distance to waypoint: 5.14 meters
+[DroneInstance 0] Distance to waypoint: 1.80 meters
+[DroneInstance 0] Distance to waypoint: 0.02 meters
+[DroneInstance 0] _complete_current_waypoint: idx=3, hold_duration=10.0, is_holding=False, hold_start_time=None
+[DroneInstance 0] Starting hold at waypoint #4 for 10.0s
+[DroneInstance 0] Distance to waypoint: 0.37 meters
+[DroneInstance 0] _complete_current_waypoint: idx=3, hold_duration=10.0, is_holding=True, hold_start_time=1761821968.9777274
+[DroneInstance 0]  Holding… elapsed=1.00s / target=10.00s
+[DroneInstance 0] Shutting down DroneInstance...

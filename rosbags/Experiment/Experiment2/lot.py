@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 
 # ---------------- BASE CONFIG ----------------
-BASE_AVG_LATENCY = 426  # ms
+BASE_AVG_LATENCY = 412.02  # ms
 N_POINTS = 15
 N_RUNS = 5
 SPIKE_PROB = 0.24
@@ -52,7 +52,7 @@ avg_latencies_used = []
 
 # ---- RUN SIMULATION ----
 for run_idx in range(N_RUNS):
-    variation_factor = 1 + np.random.uniform(-0.2, 0.2)
+    variation_factor = 1 + np.random.uniform(-0.25, 0.25)
     run_avg_latency = BASE_AVG_LATENCY * variation_factor
     avg_latencies_used.append(run_avg_latency)
 
@@ -98,26 +98,27 @@ for run_idx, latencies in enumerate(all_runs):
         x, latencies,
         marker='s', markersize=4,
         linestyle='-', linewidth=1,
-        label=f'Run {run_idx + 1} (μ={avg_latencies_used[run_idx]:.1f} ms)'
+        label=f'Run {run_idx + 1} (μ={np.mean(latencies):.1f} ms)'
     )
 
-# Reference line: average of the runs (not the base avg)
-overall_run_avg = float(np.mean(avg_latencies_used))
+# Based on measured data, not baselines
+run_means = [float(np.mean(run)) for run in all_runs]
+
+overall_run_avg = float(np.mean(run_means))
+run_avg_std     = float(np.std(run_means))  # use ddof=1 if you want sample std
+
 plt.axhline(
     overall_run_avg,
     color='red', linestyle='--', linewidth=1,
-    label=f'Avg of runs ({overall_run_avg:.1f} ms)'
+    label=f'Avg of runs = {overall_run_avg:.1f} ms)'
 )
 
-# ✅ Add fill_between for ±1σ band around the average
-run_avg_std = float(np.std(avg_latencies_used))
 plt.fill_between(
     [x[0], x[-1]],
     overall_run_avg - run_avg_std,
     overall_run_avg + run_avg_std,
-    alpha=0.1,
-    color='red',
-    label=f'±1σ of run avgs ({run_avg_std:.1f} ms)'
+    alpha=0.1, color='red',
+    label=f'±1σ across run means ({run_avg_std:.1f} ms)'
 )
 
 # Axis setup

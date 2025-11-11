@@ -4,8 +4,8 @@ import os
 import re
 
 # ==================== CONFIG =====================
-INPUT_LOG = "cli_20251018_125822.log"
-OUTPUT_JSON = "parsed_missions.json"
+INPUT_LOG = "Drone2.log"
+OUTPUT_JSON = "parsed_missions_drone2.json"
 # =================================================
 
 def extract_mission_blocks(log_path):
